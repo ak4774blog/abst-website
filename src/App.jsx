@@ -1,4 +1,3 @@
-// src/App.jsx
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { useLayoutEffect } from 'react';
 import Navbar from './components/Navbar';
@@ -9,7 +8,6 @@ import Register from './pages/Register';
 import Sponsors from './pages/Sponsors';
 import AboutUs from './pages/AboutUs';
 
-// A helper component to scroll to the top of the page on route changes.
 const Wrapper = ({ children }) => {
   const location = useLocation();
   useLayoutEffect(() => {
@@ -18,12 +16,12 @@ const Wrapper = ({ children }) => {
   return children;
 };
 
-// This is the correct, simple App component.
 export default function App() {
   return (
     <BrowserRouter>
       <Wrapper>
-        <div className="flex min-h-screen flex-col bg-white">
+        {/* ===== THEME UPDATE IS HERE ===== */}
+        <div className="flex min-h-screen flex-col bg-slate-900 text-slate-300">
           <Navbar />
           <main className="flex-grow">
             <Routes>

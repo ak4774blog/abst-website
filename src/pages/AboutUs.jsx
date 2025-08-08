@@ -1,48 +1,31 @@
 import { useState } from 'react';
 
-// This is the new, self-contained Team Member Card.
-// It receives a boolean `isExpanded` to decide what to show.
 function TeamMemberCard({ member, isExpanded, onToggle }) {
   return (
     <div
-      // The onClick handler is now passed from the parent
       onClick={onToggle}
-      // The `h-full` class ensures cards in the same row have the same starting height
-      className="flex h-full cursor-pointer flex-col rounded-lg border border-slate-200 bg-slate-50 p-6 text-center shadow-md transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-[1.02]"
+      className="flex h-full cursor-pointer flex-col rounded-lg border border-slate-700 bg-slate-800 p-6 text-center shadow-lg transition-all duration-300 ease-in-out hover:shadow-cyan-500/10 hover:scale-[1.02]"
     >
-      <h3 className="text-xl font-bold text-slate-900">{member.name}</h3>
-      <p className="mb-3 font-semibold text-sky-700">{member.role}</p>
-      
-      {/* 
-        This is the core logic:
-        - If `isExpanded` is true, show the long bio.
-        - Otherwise, show the short bio.
-      */}
-      <p className="text-left text-sm text-slate-700">
+      <h3 className="text-xl font-bold text-white">{member.name}</h3>
+      <p className="mb-3 font-semibold text-sky-400">{member.role}</p>
+      <p className="text-left text-sm text-slate-400">
         {isExpanded ? member.longBio : member.shortBio}
       </p>
     </div>
   );
 }
 
-
-// The main AboutUs page component, now with new structure and logic.
 export default function AboutUs() {
-  // This state will hold the NAME of the member whose card is currently expanded.
-  // It starts as `null`, meaning no cards are expanded.
   const [expandedCard, setExpandedCard] = useState(null);
 
   const handleCardClick = (memberName) => {
-    // If the clicked card is already the expanded one, collapse it.
     if (expandedCard === memberName) {
       setExpandedCard(null);
     } else {
-      // Otherwise, expand the clicked card.
       setExpandedCard(memberName);
     }
   };
 
-  // The full team data, with short and long bios.
   const teamData = [
     { name: "Aarush Kulkarni", role: "Tech Specialist", shortBio: "Enjoys math, chemistry, frisbee, and spikeball.", longBio: "Aarush is a student at Acton-Boxborough Regional High School. For fun, he likes going outside and playing frisbee, or spikeball inside. Additionally, he enjoys studying math and chemistry in his free time." },
     { name: "Tanish Parida", role: "Head of Problem Writing", shortBio: "Loves math, CS, astronomy, donuts, and sports.", longBio: "Tanish is a student at Acton-Boxborough Regional High School. In his free time, he likes to do math/cs/astronomy things. He also like eating donuts and playing/watching sports with his friends." },
@@ -55,11 +38,9 @@ export default function AboutUs() {
     { name: "Helen Xia", role: "Branding & Design", shortBio: "Contributes her expertise to the team's branding and design efforts.", longBio: "Helen Xia contributes her expertise to the team's branding and design efforts." }
   ];
 
-  // We split the data into two separate arrays based on your request.
   const founders = teamData.filter(member => member.name !== "Helen Xia");
   const volunteers = teamData.filter(member => member.name === "Helen Xia");
 
-  // This is a helper function to avoid repeating the grid code.
   const renderTeamGrid = (teamMembers) => (
     <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
       {teamMembers.map((member) => (
@@ -76,21 +57,19 @@ export default function AboutUs() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
       <div className="mb-12 text-center">
-        <h1 className="text-4xl font-extrabold tracking-tight text-slate-900">About Our Team</h1>
-        <p className="mx-auto mt-4 max-w-3xl text-lg text-slate-600">
+        <h1 className="text-4xl font-extrabold tracking-tight text-white">About Our Team</h1>
+        <p className="mx-auto mt-4 max-w-3xl text-lg text-slate-400">
           We are a group of students from Acton-Boxborough Regional High School's Science Olympiad Team, passionate about making STEM more accessible and exciting for younger students.
         </p>
       </div>
 
-      {/* Founders Section */}
       <section className="mb-16">
-        <h2 className="mb-8 text-center text-3xl font-bold text-slate-800">Founders</h2>
+        <h2 className="mb-8 text-center text-3xl font-bold text-slate-200">Founders</h2>
         {renderTeamGrid(founders)}
       </section>
 
-      {/* Volunteers Section */}
       <section>
-        <h2 className="mb-8 text-center text-3xl font-bold text-slate-800">Volunteers</h2>
+        <h2 className="mb-8 text-center text-3xl font-bold text-slate-200">Volunteers</h2>
         {renderTeamGrid(volunteers)}
       </section>
     </div>
