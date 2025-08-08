@@ -1,6 +1,6 @@
 export default function Register() {
   return (
-    <div className="max-w-2xl mx-auto px-4 py-16 sm:px-6 lg:px-8 text-center">
+    <div className="max-w-2xl mx-auto px-4 py-12 sm:px-6 lg:px-8 text-center">
       <h1 className="text-4xl font-extrabold tracking-tight text-white">Register for ABST!</h1>
       <p className="mt-4 text-lg text-slate-400">
         You can find all the information about the competition on the Competition Information tab.

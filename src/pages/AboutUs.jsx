@@ -56,14 +56,14 @@ export default function AboutUs() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-      <div className="mb-12 text-center">
+      <div className="mb-4 text-center">
         <h1 className="text-4xl font-extrabold tracking-tight text-white">About Our Team</h1>
         <p className="mx-auto mt-4 max-w-3xl text-lg text-slate-400">
-          We are a group of students from Acton-Boxborough Regional High School's Science Olympiad Team, passionate about making STEM more accessible and exciting for younger students.
+          Our founders are all members of the ABRHS Science Olympiad Team.
         </p>
       </div>
 
-      <section className="mb-16">
+      <section className="mb-8">
         <h2 className="mb-8 text-center text-3xl font-bold text-slate-200">Founders</h2>
         {renderTeamGrid(founders)}
       </section>

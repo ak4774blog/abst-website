@@ -7,6 +7,7 @@ import CompetitionInfo from './pages/CompetitionInfo';
 import Register from './pages/Register';
 import Sponsors from './pages/Sponsors';
 import AboutUs from './pages/AboutUs';
+import JoinUs from './pages/JoinUs'; // <-- 1. Import the new page
 
 const Wrapper = ({ children }) => {
   const location = useLocation();
@@ -20,7 +21,6 @@ export default function App() {
   return (
     <BrowserRouter>
       <Wrapper>
-        {/* ===== THEME UPDATE IS HERE ===== */}
         <div className="flex min-h-screen flex-col bg-slate-900 text-slate-300">
           <Navbar />
           <main className="flex-grow">
@@ -30,6 +30,7 @@ export default function App() {
               <Route path="/register" element={<Register />} />
               <Route path="/sponsors" element={<Sponsors />} />
               <Route path="/about" element={<AboutUs />} />
+              <Route path="/join" element={<JoinUs />} /> {/* <-- 2. Add the new route */}
             </Routes>
           </main>
           <Footer />
