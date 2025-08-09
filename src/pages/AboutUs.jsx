@@ -45,11 +45,11 @@ export default function AboutUs() {
   };
 
   const foundersData = [
-    { 
-        "name": "Ryan Xia", 
-        "role": "Head of Coordination", 
-        "shortBio": "Loves earth science, chemistry, and reading.", 
-        "longBio": "Ryan is a student at Acton-Boxborough Regional High School. In his free time, he likes to explore topics in earth science and chemistry. He also enjoys reading and the pursuit of new knowledge." 
+  { 
+        "name": "Aarush Kulkarni", 
+        "role": "Head of Technology", 
+        "shortBio": "Loves math, chemistry, frisbee, and spikeball.", 
+        "longBio": "Aarush is a student at Acton-Boxborough Regional High School. In his free time, he likes to study math and chemistry. He also enjoys playing frisbee and spikeball with his friends." 
     },
     { 
         "name": "Tanish Parida", 
@@ -64,16 +64,10 @@ export default function AboutUs() {
         "longBio": "Nathan is a student at Acton-Boxborough Regional High School. In his free time, he likes to explore physics, math, and computer science. He also enjoys playing frisbee, video games, and practicing the piano." 
     },
     { 
-        "name": "Yiyi Song", 
-        "role": "Head of Logistics", 
-        "shortBio": "Loves biology, baking, and cats.", 
-        "longBio": "Yiyi is a student at Acton-Boxborough Regional High School. In her free time, she likes to study biology and bake new things. She also really, really loves cats." 
-    },
-    { 
-        "name": "Aaron Wang", 
-        "role": "Head of Logistics", 
-        "shortBio": "Loves biology, building, tennis, and writing.", 
-        "longBio": "Aaron is a student at Acton-Boxborough Regional High School. In his free time, he likes to learn about biology, earth science, and engineering. He also enjoys playing tennis and writing." 
+        "name": "Ryan Xia", 
+        "role": "Head of Coordination", 
+        "shortBio": "Loves earth science, chemistry, and reading.", 
+        "longBio": "Ryan is a student at Acton-Boxborough Regional High School. In his free time, he likes to explore topics in earth science and chemistry. He also enjoys reading and the pursuit of new knowledge." 
     },
     { 
         "name": "Anirudh Pulugurtha", 
@@ -88,10 +82,16 @@ export default function AboutUs() {
         "longBio": "Minho is a student at Acton-Boxborough Regional High School. In his free time, he enjoys exploring through astronomy and building in Minecraft. He also likes to read; especially manhua and manga." 
     },
     { 
-        "name": "Aarush Kulkarni", 
-        "role": "Head of Technology", 
-        "shortBio": "Loves math, chemistry, frisbee, and spikeball.", 
-        "longBio": "Aarush is a student at Acton-Boxborough Regional High School. In his free time, he likes to study math and chemistry. He also enjoys playing frisbee and spikeball with his friends." 
+        "name": "Yiyi Song", 
+        "role": "Head of Logistics", 
+        "shortBio": "Loves biology, baking, and cats.", 
+        "longBio": "Yiyi is a student at Acton-Boxborough Regional High School. In her free time, she likes to study biology and bake new things. She also really, really loves cats." 
+    },
+    { 
+        "name": "Aaron Wang", 
+        "role": "Head of Logistics", 
+        "shortBio": "Loves biology, building, tennis, and writing.", 
+        "longBio": "Aaron is a student at Acton-Boxborough Regional High School. In his free time, he likes to learn about biology, earth science, and engineering. He also enjoys playing tennis and writing." 
     },
     { 
         "name": "Helen Xia", 
