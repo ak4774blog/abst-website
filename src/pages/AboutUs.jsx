@@ -26,11 +26,11 @@ const founders = [
 
 const teams = [
   { title: "Technology", heads: [allMembers.aarush], members: [] },
-  { title: "Branding & Design", heads: [allMembers.helen], members: [] },
   { title: "Problem Writing", heads: [allMembers.tanish, allMembers.nathan], members: [allMembers.ethan, allMembers.lucas, allMembers.warren, allMembers.sarthak, allMembers.kevin] },
   { title: "Coordination", heads: [allMembers.ryan], members: [] },
   { title: "Communications", heads: [allMembers.anirudh, allMembers.minho], members: [] },
   { title: "Logistics", heads: [allMembers.yiyi, allMembers.aaron], members: [] },
+  { title: "Branding & Design", heads: [allMembers.helen], members: [] }
 ];
 
 // --- COMPONENTS ---
