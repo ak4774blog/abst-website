@@ -3,7 +3,7 @@ import AnimatedPage from '../components/AnimatedPage';
 export default function Home() {
   return (
     <AnimatedPage>
-      <div className="bg-slate-800/50 backdrop-blur-sm">
+      <div className="backdrop-blur-sm">
         <div className="max-w-5xl mx-auto px-4 py-20 text-center sm:px-6 lg:px-8">
           <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
             Acton-Boxborough Science Tournament

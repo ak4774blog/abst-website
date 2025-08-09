@@ -22,7 +22,7 @@ export default function Navbar() {
           <div className="flex h-16 items-center justify-between space-x-6">
             <Link to="/" className="flex items-center">
               <div className="hidden md:flex items-center space-x-3">
-                <img className="h-8 w-auto" src="/logoabst.jpeg" alt="ABST Logo" />
+                <img className="h-8 w-auto" src="/logoabst.png" alt="ABST Logo" />
                 <span className="font-semibold text-white">Acton-Boxborough Science Tournament</span>
               </div>
               <div className="md:hidden">
