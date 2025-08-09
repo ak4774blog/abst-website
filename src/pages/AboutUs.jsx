@@ -59,7 +59,7 @@ export default function AboutUs() {
       <div className="mb-4 text-center">
         <h1 className="text-4xl font-extrabold tracking-tight text-white">About Our Team</h1>
         <p className="mx-auto mt-4 max-w-3xl text-lg text-slate-400">
-          Our founders are all members of the ABRHS Science Olympiad Team.
+          Our founders are all members of the ABRHS Science Olympiad Team. Many have also placed highly in STEM olympiads and have gone on to qualify for the USAJMO, USAPhO, etc.
         </p>
       </div>
 
