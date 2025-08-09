@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import AnimatedPage from '../components/AnimatedPage';
 function TeamMemberCard({ member, isExpanded, onToggle }) {
   return (
     <div
@@ -55,6 +55,7 @@ export default function AboutUs() {
   );
 
   return (
+  <AnimatedPage>
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
       <div className="mb-4 text-center">
         <h1 className="text-4xl font-extrabold tracking-tight text-white">About Our Team</h1>
@@ -73,5 +74,6 @@ export default function AboutUs() {
         {renderTeamGrid(volunteers)}
       </section>
     </div>
+    </AnimatedPage>
   );
 }

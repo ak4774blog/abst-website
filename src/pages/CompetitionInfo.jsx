@@ -1,3 +1,5 @@
+import AnimatedPage from '../components/AnimatedPage';
+
 function InfoSection({ title, children }) {
   return (
     <section>
@@ -11,12 +13,13 @@ function InfoSection({ title, children }) {
 
 export default function CompetitionInfo() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
-      <h1 className="text-4xl font-extrabold tracking-tight text-white text-center mb-12">
-        Competition Information
-      </h1>
-      <div className="space-y-12">
-        <InfoSection title="Date & Location">
+    <AnimatedPage>
+      <div className="max-w-4xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+        <h1 className="text-4xl font-extrabold tracking-tight text-white text-center mb-12">
+          Competition Information
+        </h1>
+        <div className="space-y-12">
+          <InfoSection title="Date & Location">
           <p>The competition will take place in <strong className="text-slate-100">April 2026</strong> (final date TBD) at <strong className="text-slate-100">RJ Grey Junior High School</strong> (16 Charter Road, Acton, MA).</p>
         </InfoSection>
 
@@ -40,7 +43,9 @@ export default function CompetitionInfo() {
           <p>Awards will be given for top individuals in each event, top overall individuals, and top teams in the Team and Guts rounds. A Sweepstakes award will be given to the top overall teams based on a weighted combination of all event scores.</p>
           <p className="text-sm text-slate-400 mt-4">*A "Scaled Score" will be used to normalize scores across different events. It is calculated as: (your score / highest score) * 50.</p>
         </InfoSection>
+        </div>
       </div>
-    </div>
+    </AnimatedPage>
   );
 }
+// (The content inside CompetitionInfo is long, so I've omitted it for brevity, just wrap it in <AnimatedPage>)
