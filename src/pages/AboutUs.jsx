@@ -35,7 +35,6 @@ const teams = [
 
 // --- COMPONENTS ---
 
-// Card for Founders and Heads
 function ExpandableCard({ member, isExpanded, onToggle }) {
   return (
     <div
@@ -51,10 +50,8 @@ function ExpandableCard({ member, isExpanded, onToggle }) {
   );
 }
 
-// Card for non-head members
 function MemberCard({ member }) {
   return (
-    // CHANGE: Darker background and border to differentiate from heads
     <div className="flex h-full min-h-[120px] flex-col justify-center rounded-lg border border-slate-800 bg-slate-900 p-6 text-center shadow-lg">
       <h3 className="text-xl font-bold text-white">{member.name}</h3>
       <p className="font-semibold text-sky-400">{member.role}</p>
@@ -67,26 +64,21 @@ function TeamSection({ team, expandedCard, onToggle }) {
     <section className="mb-10">
       <h2 className="mb-8 text-center text-2xl font-bold text-slate-200">{team.title}</h2>
       
-      {/* CHANGE: Removed the outer box/border from around the heads */}
-      <div className="mx-auto max-w-5xl">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-          {team.heads.map((head) => {
-            const uniqueCardId = `${team.title}-${head.id}`;
-            const wrapperClass = team.heads.length === 1 ? "sm:col-span-2 flex justify-center" : "";
-            
-            return (
-              <div key={uniqueCardId} className={wrapperClass}>
-                <div className="w-full max-w-md"> 
-                  <ExpandableCard
-                    member={head}
-                    isExpanded={expandedCard === uniqueCardId}
-                    onToggle={() => onToggle(uniqueCardId)}
-                  />
-                </div>
-              </div>
-            );
-          })}
-        </div>
+      {/* CHANGE: Converted the heads container to use Flexbox for proper centering */}
+      <div className="flex flex-col items-center gap-8 sm:flex-row sm:justify-center">
+        {team.heads.map((head) => {
+          const uniqueCardId = `${team.title}-${head.id}`;
+          return (
+            // No more conditional classes needed, flexbox handles both 1 and 2 items.
+            <div key={uniqueCardId} className="w-full max-w-md"> 
+              <ExpandableCard
+                member={head}
+                isExpanded={expandedCard === uniqueCardId}
+                onToggle={() => onToggle(uniqueCardId)}
+              />
+            </div>
+          );
+        })}
       </div>
 
       {team.members.length > 0 && (
@@ -118,7 +110,6 @@ export default function AboutUs() {
         </div>
 
         <section className="mb-12">
-          {/* CHANGE: Corrected title size from text-5xl to text-2xl */}
           <h2 className="mb-8 text-center text-2xl font-bold text-slate-200">Founders</h2>
           <div className="grid grid-cols-1 items-start gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {founders.map((member) => {
