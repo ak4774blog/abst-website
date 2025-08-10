@@ -11,7 +11,7 @@ const allMembers = {
   anirudh: { id: 'anirudh', name: 'Anirudh Pulugurtha', role: 'Head of Communications', shortBio: 'Loves math, robotics, and geology', longBio: 'Anirudh is a student at Acton-Boxborough Regional High School. In his free time, he likes to work on robotics and explore geology. He also enjoys playing basketball and solving math problems.' },
   minho: { id: 'minho', name: 'Minho Shin', role: 'Head of Communications', shortBio: 'Loves astronomy, guitar, and reading', longBio: 'Minho is a student at Acton-Boxborough Regional High School. In his free time, he enjoys exploring science through astronomy and playing the guitar. He also likes to read; especially manhua and manga.' },
   yiyi: { id: 'yiyi', name: 'Yiyi Song', role: 'Logistics Director', shortBio: 'Loves biology, baking, violin, and cats', longBio: 'Yiyi is a student at Acton-Boxborough Regional High School. In her free time, she likes to study biology and bake new things. She also really, really loves cats.' },
-  aaron: { id: 'aaron', name: 'Aaron Wang', role: 'Logistics Director', shortBio: 'Loves biology and building', longBio: 'Aaron is a student at Acton-Boxborough Regional High School. In his free time, he likes to learn about biology, earth science, and engineering. He also enjoys playing tennis and writing.' },
+  aaron: { id: 'aaron', name: 'Aaron Wang', role: 'Logistics Director', shortBio: 'Loves biology, writing, and engineering', longBio: 'Aaron is a student at Acton-Boxborough Regional High School. In his free time, he likes to learn about biology, earth science, and engineering. He also enjoys playing tennis and writing.' },
 
   // Volunteers
   helen: { id: 'helen', name: 'Helen Xia', role: 'Head of Branding & Design' },
