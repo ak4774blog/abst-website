@@ -3,20 +3,24 @@ import AnimatedPage from '../components/AnimatedPage';
 
 // --- DATA ---
 const allMembers = {
-  aarush: { id: 'aarush', name: 'Aarush Kulkarni', role: 'Head of Technology', shortBio: 'Loves math, chemistry, frisbee, and spikeball.', longBio: 'Aarush is a student at Acton-Boxborough Regional High School. In his free time, he likes to study math and chemistry. He also enjoys playing frisbee and spikeball with his friends.' },
-  tanish: { id: 'tanish', name: 'Tanish Parida', role: 'Head of Problem Writing', shortBio: 'Loves math, CS, astronomy, and donuts.', longBio: 'Tanish is a student at Acton-Boxborough Regional High School. In his free time, he likes to do math, CS, and astronomy related things. He also likes eating donuts and playing sports with his friends.' },
-  nathan: { id: 'nathan', name: 'Nathan Tan', role: 'Head of Problem Writing', shortBio: 'Loves physics, math, CS, and frisbee.', longBio: 'Nathan is a student at Acton-Boxborough Regional High School. In his free time, he likes to explore physics, math, and computer science. He also enjoys playing frisbee, video games, and practicing the piano.' },
-  ryan: { id: 'ryan', name: 'Ryan Xia', role: 'Head of Coordination', shortBio: 'Loves earth science, chemistry, and reading.', longBio: 'Ryan is a student at Acton-Boxborough Regional High School. In his free time, he likes to explore topics in earth science and chemistry. He also enjoys reading and the pursuit of new knowledge.' },
-  anirudh: { id: 'anirudh', name: 'Anirudh Pulugurtha', role: 'Head of Communications', shortBio: 'Loves math, robotics, basketball, and geology.', longBio: 'Anirudh is a student at Acton-Boxborough Regional High School. In his free time, he likes to work on robotics and explore geology. He also enjoys playing basketball and solving math problems.' },
-  minho: { id: 'minho', name: 'Minho Shin', role: 'Head of Communications', shortBio: 'Loves astronomy, guitar, and reading.', longBio: 'Minho is a student at Acton-Boxborough Regional High School. In his free time, he enjoys exploring science through astronomy and playing the guitar. He also likes to read; especially manhua and manga.' },
-  yiyi: { id: 'yiyi', name: 'Yiyi Song', role: 'Head of Logistics', shortBio: 'Loves biology, baking, violin, and cats.', longBio: 'Yiyi is a student at Acton-Boxborough Regional High School. In her free time, she likes to study biology and bake new things. She also really, really loves cats.' },
-  aaron: { id: 'aaron', name: 'Aaron Wang', role: 'Head of Logistics', shortBio: 'Loves biology, building, tennis, and writing.', longBio: 'Aaron is a student at Acton-Boxborough Regional High School. In his free time, he likes to learn about biology, earth science, and engineering. He also enjoys playing tennis and writing.' },
-  helen: { id: 'helen', name: 'Helen Xia', role: 'Head of Branding & Design', shortBio: 'Loves graphic design, and creating visuals.', longBio: 'Helen is a student at Acton-Boxborough Regional High School. In her free time, she likes to practice her art and work on graphic design projects. She also enjoys creating strong branding and visuals for the team.' },
+  // Founders
+  aarush: { id: 'aarush', name: 'Aarush Kulkarni', role: 'Head of Technology', shortBio: 'Loves math, chemistry, and physics', longBio: 'Aarush is a student at Acton-Boxborough Regional High School. In his free time, he likes to study math and chemistry. He also enjoys playing frisbee and spikeball with his friends.' },
+  tanish: { id: 'tanish', name: 'Tanish Parida', role: 'Head of Problem Writing', shortBio: 'Loves math, CS, astronomy, and donuts', longBio: 'Tanish is a student at Acton-Boxborough Regional High School. In his free time, he likes to do math, CS, and astronomy related things. He also likes eating donuts and playing sports with his friends.' },
+  nathan: { id: 'nathan', name: 'Nathan Tan', role: 'Head of Problem Writing', shortBio: 'Loves physics, math, CS, and frisbee', longBio: 'Nathan is a student at Acton-Boxborough Regional High School. In his free time, he likes to explore physics, math, and computer science. He also enjoys playing frisbee, video games, and practicing the piano.' },
+  ryan: { id: 'ryan', name: 'Ryan Xia', role: 'Team Coordinator', shortBio: 'Loves earth science and chemistry', longBio: 'Ryan is a student at Acton-Boxborough Regional High School. In his free time, he likes to explore topics in earth science and chemistry. He also enjoys reading and the pursuit of new knowledge.' },
+  anirudh: { id: 'anirudh', name: 'Anirudh Pulugurtha', role: 'Head of Communications', shortBio: 'Loves math, robotics, and geology', longBio: 'Anirudh is a student at Acton-Boxborough Regional High School. In his free time, he likes to work on robotics and explore geology. He also enjoys playing basketball and solving math problems.' },
+  minho: { id: 'minho', name: 'Minho Shin', role: 'Head of Communications', shortBio: 'Loves astronomy, guitar, and reading', longBio: 'Minho is a student at Acton-Boxborough Regional High School. In his free time, he enjoys exploring science through astronomy and playing the guitar. He also likes to read; especially manhua and manga.' },
+  yiyi: { id: 'yiyi', name: 'Yiyi Song', role: 'Logistics Director', shortBio: 'Loves biology, baking, violin, and cats', longBio: 'Yiyi is a student at Acton-Boxborough Regional High School. In her free time, she likes to study biology and bake new things. She also really, really loves cats.' },
+  aaron: { id: 'aaron', name: 'Aaron Wang', role: 'Logistics Director', shortBio: 'Loves biology and building', longBio: 'Aaron is a student at Acton-Boxborough Regional High School. In his free time, he likes to learn about biology, earth science, and engineering. He also enjoys playing tennis and writing.' },
+
+  // Volunteers
+  helen: { id: 'helen', name: 'Helen Xia', role: 'Head of Branding & Design' },
   ethan: { id: 'ethan', name: 'Ethan Li', role: 'Problem Writing Team' },
   lucas: { id: 'lucas', name: 'Lucas Zhang', role: 'Problem Writing Team' },
   warren: { id: 'warren', name: 'Warren Zha', role: 'Problem Writing Team' },
   sarthak: { id: 'sarthak', name: 'Sarthak Jindal', role: 'Problem Writing Team' },
   kevin: { id: 'kevin', name: 'Kevin Gao', role: 'Problem Writing Team' },
+  richard: { id: 'richard', name: 'Richard Huang', role: 'Problem Writing Team' },
 };
 
 const founders = [
@@ -24,25 +28,23 @@ const founders = [
   allMembers.anirudh, allMembers.minho, allMembers.yiyi, allMembers.aaron
 ];
 
-const teams = [
-  { title: "Technology", heads: [allMembers.aarush], members: [] },
-  { title: "Problem Writing", heads: [allMembers.tanish, allMembers.nathan], members: [allMembers.ethan, allMembers.lucas, allMembers.warren, allMembers.sarthak, allMembers.kevin] },
-  { title: "Coordination", heads: [allMembers.ryan], members: [] },
-  { title: "Communications", heads: [allMembers.anirudh, allMembers.minho], members: [] },
-  { title: "Logistics", heads: [allMembers.yiyi, allMembers.aaron], members: [] },
-  { title: "Branding & Design", heads: [allMembers.helen], members: [] }
+// CHANGE: Removed the undefined placeholder members. The list now contains only the real volunteers.
+const volunteers = [
+  allMembers.helen, allMembers.ethan, allMembers.lucas, allMembers.warren,
+  allMembers.sarthak, allMembers.kevin, allMembers.richard,
 ];
 
 // --- COMPONENTS ---
 
+// Interactive card for Founders
 function ExpandableCard({ member, isExpanded, onToggle }) {
   return (
     <div
       onClick={onToggle}
-      className="flex min-h-[120px] cursor-pointer flex-col rounded-lg border border-slate-700 bg-slate-800 p-6 text-center shadow-lg transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-cyan-500/10"
+      className="flex cursor-pointer flex-col rounded-lg border border-slate-700 bg-slate-800 p-4 text-center shadow-lg transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-cyan-500/10"
     >
-      <h3 className="text-xl font-bold text-white">{member.name}</h3>
-      <p className="mb-3 font-semibold text-sky-400">{member.role}</p>
+      <h3 className="text-lg font-bold text-white">{member.name}</h3>
+      <p className="mb-2 text-sm font-semibold text-sky-400">{member.role}</p>
       <p className={`text-sm text-slate-400 transition-all duration-300 ${isExpanded ? 'text-left' : 'text-center'}`}>
         {isExpanded ? member.longBio : member.shortBio}
       </p>
@@ -50,45 +52,13 @@ function ExpandableCard({ member, isExpanded, onToggle }) {
   );
 }
 
-function MemberCard({ member }) {
+// Static card for Volunteers
+function VolunteerCard({ member }) {
   return (
-    <div className="flex h-full min-h-[120px] flex-col justify-center rounded-lg border border-slate-800 bg-slate-900 p-6 text-center shadow-lg">
-      <h3 className="text-xl font-bold text-white">{member.name}</h3>
-      <p className="font-semibold text-sky-400">{member.role}</p>
+    <div className="flex h-full flex-col justify-center rounded-lg border border-slate-800 bg-slate-900 p-4 text-center shadow-lg">
+      <h3 className="text-lg font-bold text-white">{member.name}</h3>
+      <p className="text-sm font-semibold text-sky-400">{member.role}</p>
     </div>
-  );
-}
-
-function TeamSection({ team, expandedCard, onToggle }) {
-  return (
-    <section className="mb-10">
-      <h2 className="mb-8 text-center text-2xl font-bold text-slate-200">{team.title}</h2>
-      
-      {/* CHANGE: Converted the heads container to use Flexbox for proper centering */}
-      <div className="flex flex-col items-center gap-8 sm:flex-row sm:justify-center">
-        {team.heads.map((head) => {
-          const uniqueCardId = `${team.title}-${head.id}`;
-          return (
-            // No more conditional classes needed, flexbox handles both 1 and 2 items.
-            <div key={uniqueCardId} className="w-full max-w-md"> 
-              <ExpandableCard
-                member={head}
-                isExpanded={expandedCard === uniqueCardId}
-                onToggle={() => onToggle(uniqueCardId)}
-              />
-            </div>
-          );
-        })}
-      </div>
-
-      {team.members.length > 0 && (
-        <div className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-          {team.members.map((member) => (
-            <MemberCard key={member.id} member={member} />
-          ))}
-        </div>
-      )}
-    </section>
   );
 }
 
@@ -109,9 +79,10 @@ export default function AboutUs() {
           </p>
         </div>
 
+        {/* Founders Section */}
         <section className="mb-12">
           <h2 className="mb-8 text-center text-2xl font-bold text-slate-200">Founders</h2>
-          <div className="grid grid-cols-1 items-start gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 items-start gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {founders.map((member) => {
               const uniqueCardId = `founder-${member.id}`;
               return (
@@ -121,19 +92,20 @@ export default function AboutUs() {
                   isExpanded={expandedCard === uniqueCardId}
                   onToggle={() => handleCardClick(uniqueCardId)}
                 />
-              )
+              );
             })}
           </div>
         </section>
         
-        {teams.map((team) => (
-          <TeamSection 
-            key={team.title}
-            team={team}
-            expandedCard={expandedCard}
-            onToggle={handleCardClick}
-          />
-        ))}
+        {/* Volunteers Section */}
+        <section>
+          <h2 className="mb-8 text-center text-2xl font-bold text-slate-200">Volunteers</h2>
+          <div className="grid grid-cols-1 items-start gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+            {volunteers.map((member) => (
+              <VolunteerCard key={member.id} member={member} />
+            ))}
+          </div>
+        </section>
       </div>
     </AnimatedPage>
   );
