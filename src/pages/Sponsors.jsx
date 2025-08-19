@@ -77,8 +77,6 @@ export default function Sponsors() {
           <p className="mt-4 max-w-3xl mx-auto text-lg text-slate-400">
             We are incredibly grateful for the support of our sponsors, whose contributions make this event possible.
           </p>
-
-          {/* ===== NEW CALL TO ACTION ADDED HERE ===== */}
           <p className="mt-6 text-sky-300">
             Interested in sponsoring ABST? Please email us at{' '}
             <a href="mailto:absciencetournament@gmail.com" className="font-bold underline hover:text-sky-200">
@@ -87,7 +85,6 @@ export default function Sponsors() {
           </p>
         </div>
 
-        {/* ===== TIER ORDER REVERSED HERE ===== */}
         <div className="space-y-16">
           <TierSection 
             title="Bronze"
@@ -110,6 +107,29 @@ export default function Sponsors() {
             sponsors={[]} 
           />
         </div>
+
+        {/* ===== JUKEBOX SECTION ADDED HERE ===== */}
+        <div className="mt-20 pt-16 border-t border-slate-800">
+          <h2 className="text-3xl font-bold text-center mb-8 text-white">
+            In-Kind (Service) Sponsors
+          </h2>
+          <div className="max-w-2xl mx-auto text-center bg-slate-800 p-8 rounded-lg border border-slate-700">
+            <h3 className="text-2xl font-bold text-white">Jukebox</h3>
+            <p className="mt-4 text-lg text-slate-300">
+              Big shoutout to Jukebox for our{' '}
+              <a 
+                href="https://www.jukeboxprint.com/custom-stickers"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sky-400 underline hover:text-sky-300"
+              >
+                custom stickers
+              </a>!
+            </p>
+          </div>
+        </div>
+        {/* ===================================== */}
+        
       </div>
     </AnimatedPage>
   );
