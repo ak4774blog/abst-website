@@ -56,7 +56,6 @@ export default function JoinUs() {
         <div className="space-y-8">
           <section>
             <div className="text-center bg-slate-800 p-10 rounded-lg border border-slate-700">
-              <h2 className="text-2xl font-bold text-slate-100">Ready to Make a Difference?</h2>
               <p className="mt-2 mb-6 text-lg text-slate-300">
                 Click the link below to fill out our volunteer sign-up form. We can't wait to have you on the team! Note that you must be a student from Acton-Boxborough Regional High School.
               </p>
@@ -83,20 +82,20 @@ export default function JoinUs() {
                 tooltipText="Official Hours"
               />
               <PerkCard
-                title="Develop Real-World Skills"
+                title="Learn About Organizing Events"
                 description="You will learn about handling logistics for a competition, how to communicate as part of a large team, and organize an event from the ground up."
                 icon={<svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>}
                 tooltipText="Leadership & Organization"
               />
               <PerkCard
-                title="Mentor and Inspire"
+                title="Inspire The Youth"
                 description="You can show your passion for science and inspire younger students by helping to organize a competetive to help them grow more."
                 icon={<svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>}
                 tooltipText="Community Impact"
               />
               <PerkCard
-                title="Connect With Peers"
-                description="You will work alongside other like-minded and driven high school students, which can form friendships and valuable connections."
+                title="Connect With Talented Peers"
+                description="You will work alongside other like-minded and driven high school students, which can form friendships and valuable connections, especially since we are from the same school!"
                 icon={<svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>}
                 tooltipText="Team Building"
               />

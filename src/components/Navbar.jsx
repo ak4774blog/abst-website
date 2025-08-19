@@ -16,22 +16,35 @@ export default function Navbar() {
       : `block ${baseLinkClass} text-slate-300 hover:bg-black/20 hover:text-white text-base`;
 
   return (
-    <div className="sticky top-0 z-50 md:p-4 md:flex md:justify-center">
-      <nav className="shadow-lg bg-slate-900/60 backdrop-blur-lg ring-1 ring-white/10 md:rounded-xl">
+    // ===== BREAKPOINT CHANGED HERE =====
+    // On screens 1024px and up (lg:), it will be a centered, floating navbar.
+    // Below that, it will be a simple sticky block (full-width).
+    <div className="sticky top-0 z-50 lg:p-4 lg:flex lg:justify-center">
+    
+      {/* ===== BREAKPOINT CHANGED HERE ===== */}
+      {/* The rounded corners now apply only at the `lg` breakpoint. */}
+      <nav className="shadow-lg bg-slate-900/60 backdrop-blur-lg ring-1 ring-white/10 lg:rounded-xl">
         <div className="px-4 sm:px-6">
           <div className="flex h-16 items-center justify-between space-x-6">
+            
             <Link to="/" className="flex items-center">
-              <div className="hidden md:flex items-center space-x-3">
+              {/* ===== BREAKPOINT CHANGED HERE ===== */}
+              {/* Desktop View now starts at `lg` */}
+              <div className="hidden lg:flex items-center space-x-3">
                 <img className="h-8 w-auto" src="/logoabst.png" alt="ABST Logo" />
                 <span className="font-semibold text-white">Acton-Boxborough Science Tournament</span>
               </div>
-              <div className="md:hidden">
+              
+              {/* ===== BREAKPOINT CHANGED HERE ===== */}
+              {/* Mobile View now shows up to `lg` */}
+              <div className="lg:hidden">
                 <span className="text-xl font-bold text-white">ABST</span>
               </div>
             </Link>
 
-            {/* ===== DESKTOP LINKS UPDATED HERE ===== */}
-            <div className="hidden md:flex items-baseline space-x-2">
+            {/* ===== BREAKPOINT CHANGED HERE ===== */}
+            {/* Desktop Navigation Links now appear at `lg` */}
+            <div className="hidden lg:flex items-baseline space-x-2">
               <NavLink to="/" className={getLinkClass}>Home</NavLink>
               <NavLink to="/info" className={getLinkClass}>Competition Info</NavLink>
               <NavLink to="/register" className={getLinkClass}>Register</NavLink>
@@ -40,7 +53,9 @@ export default function Navbar() {
               <NavLink to="/join" className={getLinkClass}>Join Us</NavLink>
             </div>
 
-            <div className="flex items-center md:hidden">
+            {/* ===== BREAKPOINT CHANGED HERE ===== */}
+            {/* Mobile Menu Button now disappears at `lg` */}
+            <div className="flex items-center lg:hidden">
               <button onClick={() => setIsMenuOpen(!isMenuOpen)} type="button" className="inline-flex items-center justify-center rounded-md p-2 text-slate-400 hover:bg-slate-700/50 hover:text-white focus:outline-none focus:ring-2 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
                 <span className="sr-only">Open main menu</span>
                 {isMenuOpen ? (<svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>) : (<svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>)}
@@ -49,9 +64,9 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* ===== MOBILE MENU UPDATED HERE ===== */}
+        {/* Mobile menu dropdown panel */}
         {isMenuOpen && (
-          <div className="md:hidden" id="mobile-menu">
+          <div className="lg:hidden" id="mobile-menu">
             <div className="space-y-1 px-2 pt-2 pb-3 sm:px-3">
               <NavLink to="/" className={getMobileLinkClass} onClick={() => setIsMenuOpen(false)}>Home</NavLink>
               <NavLink to="/info" className={getMobileLinkClass} onClick={() => setIsMenuOpen(false)}>Competition Info</NavLink>
