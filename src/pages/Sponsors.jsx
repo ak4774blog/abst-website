@@ -71,7 +71,7 @@ export default function Sponsors() {
     <AnimatedPage>
       <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+          <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-4xl">
             Our Sponsors
           </h1>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-slate-400">
@@ -87,22 +87,22 @@ export default function Sponsors() {
 
         <div className="space-y-16">
           <TierSection 
-            title="Bronze"
+            title="Bronze ($0-150)"
             colorClass="text-orange-400"
             sponsors={bronzeSponsors}
           />
           <TierSection 
-            title="Silver"
+            title="Silver ($151-500)"
             colorClass="text-slate-400"
             sponsors={[]}
           />
           <TierSection 
-            title="Gold"
+            title="Gold ($501-1000)"
             colorClass="text-amber-400"
             sponsors={[]}
           />
           <TierSection 
-            title="Platinum"
+            title="Platinum ($1001+)"
             colorClass="text-blue-300" 
             sponsors={[]} 
           />
