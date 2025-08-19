@@ -1,11 +1,14 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import tailwindcss from '@tailwindcss/vite'; // <-- Must be imported
+// vite.config.js
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
+import Sitemap from "vite-plugin-sitemap"; // Import the plugin
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react(),
-    tailwindcss(), // <-- Must be included here in the plugins array
+    tailwindcss(),
+    Sitemap({ hostname: "https://absciencetournament.org" }), // Add the plugin
   ],
+  base: "/",
 });
