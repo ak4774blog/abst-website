@@ -20,6 +20,9 @@ const allMembers = {
   sarthak: { id: 'sarthak', name: 'Sarthak Jindal', role: 'Problem Writing Team' },
   kevin: { id: 'kevin', name: 'Kevin Gao', role: 'Problem Writing Team' },
   richard: { id: 'richard', name: 'Richard Huang', role: 'Problem Writing Team' },
+  jonathan: { id: 'jonathan', name: 'Jonathan Ren', role: 'Problem Writing Team' },
+  avanithar: { id: 'avanithar', name: 'Avanithar Ananthkumar', role: 'Problem Writing Team' },
+  benjamin: { id: 'benjamin', name: 'Benjamin Li', role: 'Problem Writing Team' },
 };
 
 const founders = [
@@ -30,7 +33,8 @@ const founders = [
 // CHANGE: Removed the undefined placeholder members. The list now contains only the real volunteers.
 const volunteers = [
   allMembers.helen, allMembers.ethan, allMembers.lucas, allMembers.warren,
-  allMembers.sarthak, allMembers.kevin, allMembers.richard,
+  allMembers.sarthak, allMembers.kevin, allMembers.richard, allMembers.jonathan,
+  allMembers.avanithar, allMembers.benjamin,
 ];
 
 // --- COMPONENTS ---
