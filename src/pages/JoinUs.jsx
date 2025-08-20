@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useFloating, useHover, useInteractions, offset, flip, shift } from '@floating-ui/react';
 import AnimatedPage from '../components/AnimatedPage';
-
 // This PerkCard component includes the tooltip logic.
 function PerkCard({ title, description, icon, tooltipText }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,6 +42,8 @@ function PerkCard({ title, description, icon, tooltipText }) {
 export default function JoinUs() {
   return (
     <AnimatedPage>
+    <title>Join Us | ABST</title>
+      <meta name="description" content="Volunteer for the Acton-Boxborough Science Tournament. ABRHS students can earn volunteer hours, develop leadership skills, and inspire younger students." />
       <div className="max-w-4xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <div className="text-center mb-4">
           <h1 className="text-4xl font-extrabold tracking-tight text-white text-center mb-4">

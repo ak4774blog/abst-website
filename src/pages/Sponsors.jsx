@@ -1,5 +1,4 @@
 import AnimatedPage from '../components/AnimatedPage';
-
 // --- DATA ---
 const bronzeSponsors = [
   { 
@@ -69,6 +68,8 @@ function TierSection({ title, colorClass, sponsors }) {
 export default function Sponsors() {
   return (
     <AnimatedPage>
+    <title>Sponsors | ABST</title>
+      <meta name="description" content="A special thank you to the sponsors of the Acton-Boxborough Science Tournament, including Hack Club, Jane Street, and Overleaf." />
       <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-4xl">

@@ -3,6 +3,8 @@ import AnimatedPage from '../components/AnimatedPage';
 export default function Register() {
   return (
     <AnimatedPage>
+    <title>Register | ABST</title>
+      <meta name="description" content="Register your team for the Acton-Boxborough Science Tournament. Sign up here to compete in our middle school science competition." />
       <div className="max-w-2xl mx-auto px-4 py-12 sm:px-6 lg:px-8 text-center">
         <h1 className="text-4xl font-extrabold tracking-tight text-white">Register for ABST!</h1>
         <p className="mt-4 text-lg text-slate-400">

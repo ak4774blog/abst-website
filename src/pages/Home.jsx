@@ -1,8 +1,9 @@
 import AnimatedPage from '../components/AnimatedPage';
-
 export default function Home() {
   return (
     <AnimatedPage>
+    <title>ABST - Acton-Boxborough Science Tournament</title>
+      <meta name="description" content="The official website for the Acton-Boxborough Science Tournament (ABST), a premier science competition for middle schoolers in Massachusetts, founded by ABRHS students." />
       <div className="backdrop-blur-sm">
         {/* The py-20 class was changed to pt-20 pb-8 to reduce bottom padding */}
         <div className="max-w-5xl mx-auto px-4 pt-20 pb-8 text-center sm:px-6 lg:px-8">

@@ -31,7 +31,7 @@ export default function Navbar() {
               {/* ===== BREAKPOINT CHANGED HERE ===== */}
               {/* Desktop View now starts at `lg` */}
               <div className="hidden lg:flex items-center space-x-3">
-                <img className="h-8 w-auto" src="/logoabst.png" alt="ABST Logo" />
+                <img className="h-8 w-auto" src="/logoabst.png" alt="ABST Official Logo" />
                 <span className="font-semibold text-white">Acton-Boxborough Science Tournament</span>
               </div>
               

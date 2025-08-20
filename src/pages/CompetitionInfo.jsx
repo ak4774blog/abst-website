@@ -1,5 +1,4 @@
 import AnimatedPage from '../components/AnimatedPage';
-
 function InfoSection({ title, children }) {
   return (
     <section>
@@ -14,6 +13,8 @@ function InfoSection({ title, children }) {
 export default function CompetitionInfo() {
   return (
     <AnimatedPage>
+    <title>Competition Information | ABST</title>
+      <meta name="description" content="View the official format, schedule, and scoring details for the Acton-Boxborough Science Tournament. Events include Math, Physics, Biology, and more." />
       <div className="max-w-4xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-extrabold tracking-tight text-white text-center mb-12">
           Competition Information

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import AnimatedPage from '../components/AnimatedPage';
-
 // --- DATA ---
 const allMembers = {
   // Founders
@@ -71,6 +70,8 @@ export default function AboutUs() {
 
   return (
     <AnimatedPage>
+    <title>Our Team | ABST</title>
+      <meta name="description" content="Meet the founders and volunteers of the Acton-Boxborough Science Tournament. Our team is composed of passionate students from ABRHS." />
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <h1 className="text-4xl font-extrabold tracking-tight text-white">About Our Team</h1>
