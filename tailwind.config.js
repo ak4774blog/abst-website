@@ -1,11 +1,19 @@
+// tailwind.config.js
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}", // <-- This path is critical
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        // ===== CHANGE 'Inter' TO 'Carlito' HERE =====
+        sans: ['Carlito', 'sans-serif'],
+      },
+    },
   },
-  plugins: [require('@tailwindcss/aspect-ratio'), // <-- Add this line],
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+  ],
 };

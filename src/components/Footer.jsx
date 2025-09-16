@@ -6,9 +6,6 @@ export default function Footer() {
         <p className="text-sm text-slate-400">
           &copy; {currentYear} Acton-Boxborough Science Tournament
         </p>
-        <p className="mt-1 text-xs text-slate-500">
-          Made by Aarush Kulkarni for ABST
-        </p>
       </div>
     </footer>
   );
