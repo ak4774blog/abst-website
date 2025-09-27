@@ -1,12 +1,8 @@
 import AnimatedPage from '../components/AnimatedPage';
+
 // --- DATA ---
-const bronzeSponsors = [
-  { 
-    name: 'Hack Club', 
-    href: 'https://hackclub.com/',
-    logoSrc: '/hack-club-logo.png',
-    description: 'Our 501(c)(3) fiscal sponsor, helping us operate as a non-profit.'
-  },
+// We've reorganized the sponsors into their correct tier arrays.
+const goldSponsors = [
   { 
     name: 'Jane Street', 
     href: 'https://www.janestreet.com/',
@@ -21,8 +17,18 @@ const bronzeSponsors = [
   }
 ];
 
+const bronzeSponsors = [
+  { 
+    name: 'Hack Club', 
+    href: 'https://hackclub.com/',
+    logoSrc: '/hack-club-logo.png',
+    description: 'Our 501(c)(3) fiscal sponsor, helping us operate as a non-profit.'
+  }
+];
+
 // --- COMPONENTS ---
 
+// This component remains the same.
 function SponsorCard({ sponsor }) {
   return (
     <a 
@@ -45,6 +51,7 @@ function SponsorCard({ sponsor }) {
   );
 }
 
+// This component also remains the same.
 function TierSection({ title, colorClass, sponsors }) {
   return (
     <section>
@@ -64,15 +71,13 @@ function TierSection({ title, colorClass, sponsors }) {
   );
 }
 
-// The main Sponsors page component.
+// The main Sponsors page component with updated order.
 export default function Sponsors() {
   return (
     <AnimatedPage>
-    <title>Sponsors | ABST</title>
-      <meta name="description" content="A special thank you to the sponsors of the Acton-Boxborough Science Tournament, including Hack Club, Jane Street, and Overleaf." />
       <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-4xl">
+          <h1 className="text-4xl font-extrabold tracking-tight text-white">
             Our Sponsors
           </h1>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-slate-400">
@@ -86,11 +91,17 @@ export default function Sponsors() {
           </p>
         </div>
 
+        {/* ===== TIER ORDER REVERSED HERE ===== */}
         <div className="space-y-16">
           <TierSection 
-            title="Bronze ($0-150)"
-            colorClass="text-orange-400"
-            sponsors={bronzeSponsors}
+            title="Platinum ($1001+)"
+            colorClass="text-blue-300" 
+            sponsors={[]} 
+          />
+          <TierSection 
+            title="Gold ($501-1000)"
+            colorClass="text-amber-400"
+            sponsors={goldSponsors} // Now using the new goldSponsors array
           />
           <TierSection 
             title="Silver ($151-500)"
@@ -98,21 +109,15 @@ export default function Sponsors() {
             sponsors={[]}
           />
           <TierSection 
-            title="Gold ($501-1000)"
-            colorClass="text-amber-400"
-            sponsors={[]}
-          />
-          <TierSection 
-            title="Platinum ($1001+)"
-            colorClass="text-blue-300" 
-            sponsors={[]} 
+            title="Bronze ($0-150)"
+            colorClass="text-orange-400"
+            sponsors={bronzeSponsors} // Now only contains Hack Club
           />
         </div>
 
-        {/* ===== JUKEBOX SECTION ADDED HERE ===== */}
         <div className="mt-20 pt-16 border-t border-slate-800">
-          <h2 className="text-3xl font-bold text-center mb-8 text-white">
-            In-Kind (Service) Sponsors
+          <h2 className="text-3xl font-bold text-center mb-8 text-slate-200">
+            In-Kind Sponsors
           </h2>
           <div className="max-w-2xl mx-auto text-center bg-slate-800 p-8 rounded-lg border border-slate-700">
             <h3 className="text-2xl font-bold text-white">Jukebox</h3>
@@ -129,7 +134,6 @@ export default function Sponsors() {
             </p>
           </div>
         </div>
-        {/* ===================================== */}
         
       </div>
     </AnimatedPage>

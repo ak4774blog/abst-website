@@ -17,7 +17,7 @@ export default function JoinUs() {
       
       <div className="max-w-5xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+          <h1 className="text-4xl font-extrabold tracking-tight text-white">
             Join Our Team
           </h1>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-slate-400">
