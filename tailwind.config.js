@@ -8,8 +8,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        // ===== CHANGE 'Inter' TO 'Carlito' HERE =====
-        sans: ['Carlito', 'sans-serif'],
+        // ===== CHANGE 'Lato' (or your previous font) TO 'Roboto' HERE =====
+        sans: ['font-mono', 'sans-serif'],
       },
     },
   },

@@ -87,7 +87,7 @@ export default function Home() {
         {/* This div creates a dark overlay for better text readability */}
         <div className="absolute inset-0 bg-slate-900/60 flex items-center justify-center">
           <div className="max-w-5xl mx-auto px-4 text-center sm:px-6 lg:px-8">
-            <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.7)' }}>
+            <h1 className="font-mono text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.7)' }}>
               Acton-Boxborough Science Tournament
             </h1>
             <p className="mt-6 max-w-3xl mx-auto text-xl text-slate-200" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.7)' }}>
