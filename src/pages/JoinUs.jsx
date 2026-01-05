@@ -30,22 +30,7 @@ export default function JoinUs() {
             {/* The "Sign Up" box now contains the images and caption */}
             <div className="bg-slate-800 p-8 rounded-lg border border-slate-700">
               
-              {/* ===== IMAGE GALLERY MOVED INSIDE HERE ===== */}
-              <div className="mb-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-                  <div className="md:col-span-2 overflow-hidden rounded-lg shadow-lg">
-                    <img 
-                      src="/teamimage2.jpg" 
-                      alt="ABST team posing for a group photo" 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-                <p className="text-center mt-4 text-sm text-slate-500 italic">
-                  Photo from our first meeting!
-                </p>
-              </div>
+          
               {/* ======================================= */}
               
               <div className="text-center">
