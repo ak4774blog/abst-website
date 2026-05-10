@@ -103,7 +103,7 @@ export default function Sponsors() {
           />
           <section>
             <h2 className="text-lg font-semibold text-[var(--text-heading)] mb-2 border-b border-[var(--border-color)] pb-2">Platinum &amp; Silver</h2>
-            <p className="text-sm text-[var(--text-muted)] italic">Sponsorship opportunities available — reach out to get involved.</p>
+            <p className="text-sm text-[var(--text-muted)] italic">Sponsorship opportunities available; reach out to get involved.</p>
           </section>
         </div>
 
