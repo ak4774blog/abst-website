@@ -39,7 +39,7 @@ export default function JoinUs() {
           <div className="space-y-5">
             <div>
               <h3 className="text-sm font-semibold text-[var(--text-heading)]">Earn Volunteer Hours</h3>
-              <p className="text-sm text-[var(--text-body)] mt-1">Earn verified community service hours for your time and dedication—a great addition to your resume and college applications.</p>
+              <p className="text-sm text-[var(--text-body)] mt-1">Earn verified community service hours for your time and dedication; a great addition to your resume and college applications.</p>
             </div>
             <div>
               <h3 className="text-sm font-semibold text-[var(--text-heading)]">Develop Leadership & Organizational Skills</h3>
