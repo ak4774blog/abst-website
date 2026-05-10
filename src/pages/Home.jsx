@@ -27,7 +27,7 @@ export default function Home() {
         </p>
 
         <p className="mt-8 text-xl text-[var(--text-body)] max-w-2xl leading-relaxed animate-[fadeIn_1.2s_ease]">
-          A student-run science competition for middle schoolers—individual events, team rounds, and a fast-paced Guts round, all in one day.
+          Dedicated to making STEM education more accessible for middle and elementary schoolers across New England. A fun, competitive environment designed by a committed team of ABRHS students.
         </p>
 
         <div className="mt-10 flex gap-4 animate-[fadeIn_1.4s_ease]">
@@ -41,7 +41,7 @@ export default function Home() {
             to="/info"
             className="text-[var(--text-heading)] font-semibold text-base px-8 py-3 rounded-md border border-[var(--border-color)] hover:bg-[var(--surface-muted)] transition-colors"
           >
-            How it works
+            More info
           </Link>
         </div>
       </div>
