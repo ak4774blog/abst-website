@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import AnimatedPage from '../components/AnimatedPage';
+
 // --- DATA ---
 const allMembers = {
   // Founders
@@ -73,7 +74,7 @@ export default function AboutUs() {
 
   return (
     <AnimatedPage>
-    <title>Our Team | ABST</title>
+      <title>Our Team | ABST</title>
       <meta name="description" content="Meet the founders and volunteers of the Acton-Boxborough Science Tournament. Our team is composed of passionate students from ABRHS." />
 
       {/* Page header band */}
@@ -86,9 +87,10 @@ export default function AboutUs() {
         </div>
       </div>
 
-      {/* Founders */}
+      {/* Founders / Board of Directors */}
       <div>
         <div className="mx-auto max-w-5xl px-6 sm:px-8 py-6">
+          <h2 className="mb-5 text-lg font-semibold text-[var(--text-heading)]">Board of Directors</h2>
           <div className="grid grid-cols-1 items-start gap-6 sm:grid-cols-2 lg:grid-cols-2">
             {founders.map((member) => {
               const uniqueCardId = `founder-${member.id}`;

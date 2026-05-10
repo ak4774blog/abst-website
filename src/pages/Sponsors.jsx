@@ -2,6 +2,22 @@ import AnimatedPage from '../components/AnimatedPage';
 
 // --- DATA ---
 // We've reorganized the sponsors into their correct tier arrays.
+
+const platinumSponsors = [
+  { 
+    name: 'Overleaf', 
+    href: 'https://www.overleaf.com/',
+    logoSrc: '/overleaf-logo.jpg',
+    description: 'The easy-to-use, online, collaborative LaTeX editor.'
+  },
+  { 
+    name: 'RSM (Russian School of Mathematics)', 
+    href: 'https://www.mathschool.com/',
+    logoSrc: '/rsm-logo.png',
+    description: 'Award-winning after-school math enrichment program.'
+  }
+];
+
 const goldSponsors = [
   { 
     name: 'Jane Street', 
@@ -10,10 +26,25 @@ const goldSponsors = [
     description: 'A quantitative trading firm focused on technology and collaborative problem solving.'
   },
   { 
-    name: 'Overleaf', 
-    href: 'https://www.overleaf.com/',
-    logoSrc: '/overleaf-logo.jpg',
-    description: 'The easy-to-use, online, collaborative LaTeX editor.'
+    name: 'Wolfram', 
+    href: 'https://www.wolfram.com/',
+    logoSrc: '/wolfram-logo.png',
+    description: 'Creators of Mathematica, Wolfram|Alpha, and the Wolfram Language.'
+  }
+];
+
+const silverSponsors = [
+  { 
+    name: 'Areteem', 
+    href: 'https://areteem.org/',
+    logoSrc: '/areteem-logo.png',
+    description: 'Educational institution developing future leaders in STEM fields.'
+  },
+  { 
+    name: 'Mehta+', 
+    href: 'https://mehtaplus.com/',
+    logoSrc: '/mehtaplus-logo.png',
+    description: 'Providing comprehensive STEM educational programs and resources.'
   }
 ];
 
@@ -92,40 +123,44 @@ export default function Sponsors() {
             </a>.
           </p>
 
-        <div className="space-y-12">
-          <TierSection 
-            title="Gold Sponsors"
-            sponsors={goldSponsors}
-          />
-          <TierSection 
-            title="Bronze Sponsors"
-            sponsors={bronzeSponsors}
-          />
-          <section>
-            <h2 className="text-lg font-semibold text-[var(--text-heading)] mb-2 border-b border-[var(--border-color)] pb-2">Platinum &amp; Silver</h2>
-            <p className="text-sm text-[var(--text-muted)] italic">Sponsorship opportunities available; reach out to get involved.</p>
-          </section>
-        </div>
-
-        <div className="mt-16 pt-10 border-t border-[var(--border-color)]">
-          <h2 className="text-lg font-semibold text-[var(--text-heading)] mb-4">
-            In-Kind Sponsors
-          </h2>
-          <div className="max-w-md">
-            <h3 className="text-base font-semibold text-[var(--text-heading)]">Jukebox</h3>
-            <p className="mt-1 text-sm text-[var(--text-body)]">
-              Big shoutout to Jukebox for our{' '}
-              <a 
-                href="https://www.jukeboxprint.com/custom-stickers"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[var(--text-brand)] underline hover:opacity-80"
-              >
-                custom stickers
-              </a>!
-            </p>
+          <div className="space-y-12">
+            <TierSection 
+              title="Platinum Sponsors"
+              sponsors={platinumSponsors}
+            />
+            <TierSection 
+              title="Gold Sponsors"
+              sponsors={goldSponsors}
+            />
+            <TierSection 
+              title="Silver Sponsors"
+              sponsors={silverSponsors}
+            />
+            <TierSection 
+              title="Bronze Sponsors"
+              sponsors={bronzeSponsors}
+            />
           </div>
-        </div>
+
+          <div className="mt-16 pt-10 border-t border-[var(--border-color)]">
+            <h2 className="text-lg font-semibold text-[var(--text-heading)] mb-4">
+              In-Kind Sponsors
+            </h2>
+            <div className="max-w-md">
+              <h3 className="text-base font-semibold text-[var(--text-heading)]">Jukebox</h3>
+              <p className="mt-1 text-sm text-[var(--text-body)]">
+                Big shoutout to Jukebox for our{' '}
+                <a 
+                  href="https://www.jukeboxprint.com/custom-stickers"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[var(--text-brand)] underline hover:opacity-80"
+                >
+                  custom stickers
+                </a>!
+              </p>
+            </div>
+          </div>
         
         </div>
       </div>
