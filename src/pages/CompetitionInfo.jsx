@@ -32,7 +32,7 @@ export default function CompetitionInfo() {
         <section className="grid grid-cols-1 md:grid-cols-[12rem_1fr] gap-2 md:gap-8">
           <p className="text-xs uppercase tracking-widest text-[var(--text-caption)] font-semibold pt-1">Date &amp; Location</p>
           <div>
-            <p className="text-base text-[var(--text-body)]"><span className="font-medium text-[var(--text-heading)]">Date:</span> May 30, 2026</p>
+            <p className="text-base text-[var(--text-body)]"><span className="font-medium text-[var(--text-heading)]">Date:</span> June 6, 2026</p>
             <p className="text-base text-[var(--text-body)]"><span className="font-medium text-[var(--text-heading)]">Time:</span> 9:00 AM – 3:00 PM</p>
             <p className="text-base text-[var(--text-body)]"><span className="font-medium text-[var(--text-heading)]">Venue:</span> Acton Congregational Church</p>
             <p className="text-sm text-[var(--text-caption)]">12 Concord Road, Acton, MA</p>

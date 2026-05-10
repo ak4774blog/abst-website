@@ -22,7 +22,7 @@ export default function Home() {
         </h1>
 
         <p className="mt-6 text-lg text-[var(--text-body)] animate-[fadeIn_1s_ease]">
-          May 30, 2026 @ Acton Congregational Church
+          June 6, 2026 @ Acton Congregational Church
           <span className="block text-xs text-[var(--text-caption)] mt-1 italic">Not a religious event</span>
         </p>
 
