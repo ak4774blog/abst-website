@@ -8,8 +8,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        // ===== CHANGE 'Lato' (or your previous font) TO 'Roboto' HERE =====
-        sans: ['font-mono', 'sans-serif'],
+        sans: ['"Lexend"', 'sans-serif'],
+        serif: ['"Bricolage Grotesque"', 'sans-serif'],
       },
     },
   },

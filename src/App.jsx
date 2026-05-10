@@ -1,11 +1,9 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useLayoutEffect } from "react";
-import { Canvas } from "@react-three/fiber";
 import { AnimatePresence } from "framer-motion";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Scene from "./components/Scene";
 import Home from "./pages/Home";
 import CompetitionInfo from "./pages/CompetitionInfo";
 import Register from "./pages/Register";
@@ -24,16 +22,9 @@ const Wrapper = ({ children }) => {
 
 export default function App() {
   const location = useLocation();
-  const isHomePage = location.pathname === "/";
 
   return (
-    <div className="flex min-h-screen flex-col bg-slate-900 text-slate-300">
-      {!isHomePage && (
-        <Canvas className="!fixed inset-0 -z-10">
-          <Scene />
-        </Canvas>
-      )}
-
+    <div className="flex min-h-screen flex-col">
       <Navbar />
       <main className="flex-grow">
         <AnimatePresence mode="wait">

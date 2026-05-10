@@ -35,37 +35,33 @@ function SponsorCard({ sponsor }) {
       href={sponsor.href} 
       target="_blank" 
       rel="noopener noreferrer"
-      className="block bg-slate-800 p-6 rounded-lg border border-slate-700 h-full transition-all duration-300 hover:border-sky-500 hover:scale-105"
+      className="block border border-[var(--border-color)] rounded p-5 h-full hover:border-[var(--text-muted)] transition-colors"
     >
-      <div className="relative h-20 mb-4 flex items-center justify-center bg-white rounded-md p-2">
+      <div className="relative h-16 mb-3 flex items-center justify-start">
         <img
           src={sponsor.logoSrc}
           alt={`${sponsor.name} logo`}
           className="max-h-full max-w-full object-contain"
         />
       </div>
-      
-      <h3 className="text-xl font-bold text-white mb-2">{sponsor.name}</h3>
-      <p className="text-slate-400">{sponsor.description}</p>
+      <h3 className="text-base font-semibold text-[var(--text-heading)] mb-1">{sponsor.name}</h3>
+      <p className="text-sm text-[var(--text-body)]">{sponsor.description}</p>
     </a>
   );
 }
 
-// This component also remains the same.
-function TierSection({ title, colorClass, sponsors }) {
+function TierSection({ title, sponsors }) {
   return (
     <section>
-      <h2 className={`text-3xl font-bold text-center mb-8 ${colorClass}`}>
+      <h2 className="text-lg font-semibold text-[var(--text-heading)] mb-4 border-b border-[var(--border-color)] pb-2">
         {title}
       </h2>
       {sponsors.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {sponsors.map(sponsor => <SponsorCard key={sponsor.name} sponsor={sponsor} />)}
         </div>
       ) : (
-        <div className="text-center text-slate-500 border border-dashed border-slate-700 rounded-lg py-12">
-          <p>Sponsorship opportunities available!</p>
-        </div>
+        <p className="text-sm text-[var(--text-muted)] italic">Sponsorship opportunities available.</p>
       )}
     </section>
   );
@@ -75,59 +71,55 @@ function TierSection({ title, colorClass, sponsors }) {
 export default function Sponsors() {
   return (
     <AnimatedPage>
-      <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-extrabold tracking-tight text-white">
+      {/* Page header band */}
+      <div>
+        <div className="max-w-5xl mx-auto px-6 sm:px-8 pt-10 pb-6">
+          <h1 className="font-serif heading-bold text-4xl font-bold text-[var(--text-heading)]">
             Our Sponsors
           </h1>
-          <p className="mt-4 max-w-3xl mx-auto text-lg text-slate-400">
+          <p className="mt-2 text-base text-[var(--text-caption)]">
             We are incredibly grateful for the support of our sponsors, whose contributions make this event possible.
           </p>
-          <p className="mt-6 text-sky-300">
-            Interested in sponsoring ABST? Please email us at{' '}
-            <a href="mailto:absciencetournament@gmail.com" className="font-bold underline hover:text-sky-200">
+        </div>
+      </div>
+
+      <div>
+        <div className="max-w-5xl mx-auto px-6 sm:px-8 pb-12">
+          <p className="text-sm text-[var(--text-body)] mb-10">
+            Interested in sponsoring ABST? Email us at{' '}
+            <a href="mailto:absciencetournament@gmail.com" className="text-[var(--text-brand)] font-medium hover:underline">
               absciencetournament@gmail.com
-            </a>!
+            </a>.
           </p>
+
+        <div className="space-y-12">
+          <TierSection 
+            title="Gold Sponsors"
+            sponsors={goldSponsors}
+          />
+          <TierSection 
+            title="Bronze Sponsors"
+            sponsors={bronzeSponsors}
+          />
+          <section>
+            <h2 className="text-lg font-semibold text-[var(--text-heading)] mb-2 border-b border-[var(--border-color)] pb-2">Platinum &amp; Silver</h2>
+            <p className="text-sm text-[var(--text-muted)] italic">Sponsorship opportunities available — reach out to get involved.</p>
+          </section>
         </div>
 
-        {/* ===== TIER ORDER REVERSED HERE ===== */}
-        <div className="space-y-16">
-          <TierSection 
-            title="Platinum ($1001+)"
-            colorClass="text-blue-300" 
-            sponsors={[]} 
-          />
-          <TierSection 
-            title="Gold ($501-1000)"
-            colorClass="text-amber-400"
-            sponsors={goldSponsors} // Now using the new goldSponsors array
-          />
-          <TierSection 
-            title="Silver ($151-500)"
-            colorClass="text-slate-400"
-            sponsors={[]}
-          />
-          <TierSection 
-            title="Bronze ($0-150)"
-            colorClass="text-orange-400"
-            sponsors={bronzeSponsors} // Now only contains Hack Club
-          />
-        </div>
-
-        <div className="mt-20 pt-16 border-t border-slate-800">
-          <h2 className="text-3xl font-bold text-center mb-8 text-slate-200">
+        <div className="mt-16 pt-10 border-t border-[var(--border-color)]">
+          <h2 className="text-lg font-semibold text-[var(--text-heading)] mb-4">
             In-Kind Sponsors
           </h2>
-          <div className="max-w-2xl mx-auto text-center bg-slate-800 p-8 rounded-lg border border-slate-700">
-            <h3 className="text-2xl font-bold text-white">Jukebox</h3>
-            <p className="mt-4 text-lg text-slate-300">
+          <div className="max-w-md">
+            <h3 className="text-base font-semibold text-[var(--text-heading)]">Jukebox</h3>
+            <p className="mt-1 text-sm text-[var(--text-body)]">
               Big shoutout to Jukebox for our{' '}
               <a 
                 href="https://www.jukeboxprint.com/custom-stickers"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sky-400 underline hover:text-sky-300"
+                className="text-[var(--text-brand)] underline hover:opacity-80"
               >
                 custom stickers
               </a>!
@@ -135,6 +127,7 @@ export default function Sponsors() {
           </div>
         </div>
         
+        </div>
       </div>
     </AnimatedPage>
   );

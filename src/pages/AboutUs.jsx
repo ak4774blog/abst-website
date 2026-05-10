@@ -39,28 +39,27 @@ const volunteers = [
 
 // --- COMPONENTS ---
 
-// Interactive card for Founders
 function ExpandableCard({ member, isExpanded, onToggle }) {
   return (
     <div
       onClick={onToggle}
-      className="flex cursor-pointer flex-col rounded-lg border border-slate-700 bg-slate-800 p-4 text-center shadow-lg transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-cyan-500/10"
+      className="cursor-pointer pb-4 border-b border-[var(--border-color)] hover:opacity-80 transition-opacity"
     >
-      <h3 className="text-lg font-bold text-white">{member.name}</h3>
-      <p className="mb-2 text-sm font-semibold text-sky-400">{member.role}</p>
-      <p className={`text-sm text-slate-400 transition-all duration-300 ${isExpanded ? 'text-left' : 'text-center'}`}>
+      <h3 className="text-base font-semibold text-[var(--text-heading)]">{member.name}</h3>
+      <p className="text-xs font-medium text-[var(--text-brand)] mb-1">{member.role}</p>
+      <p className="text-sm text-[var(--text-body)] leading-relaxed">
         {isExpanded ? member.longBio : member.shortBio}
       </p>
+      <p className="mt-2 text-xs text-[var(--text-muted)]">{isExpanded ? 'Click to collapse' : 'Click to read more'}</p>
     </div>
   );
 }
 
-// Static card for Volunteers
 function VolunteerCard({ member }) {
   return (
-    <div className="flex h-full flex-col justify-center rounded-lg border border-slate-800 bg-slate-900 p-4 text-center shadow-lg">
-      <h3 className="text-lg font-bold text-white">{member.name}</h3>
-      <p className="text-sm font-semibold text-sky-400">{member.role}</p>
+    <div>
+      <h3 className="text-sm font-semibold text-[var(--text-heading)]">{member.name}</h3>
+      <p className="text-xs text-[var(--text-caption)] mt-0.5">{member.role}</p>
     </div>
   );
 }
@@ -76,18 +75,21 @@ export default function AboutUs() {
     <AnimatedPage>
     <title>Our Team | ABST</title>
       <meta name="description" content="Meet the founders and volunteers of the Acton-Boxborough Science Tournament. Our team is composed of passionate students from ABRHS." />
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="mb-12 text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight text-white">About Our Team</h1>
-          <p className="mx-auto mt-4 max-w-3xl text-lg text-slate-400">
-            Our founders are all members of the ABRHS Science Olympiad Team.
+
+      {/* Page header band */}
+      <div>
+        <div className="max-w-5xl mx-auto px-6 sm:px-8 pt-10 pb-6">
+          <h1 className="font-serif heading-bold text-4xl font-bold text-[var(--text-heading)]">About Our Team</h1>
+          <p className="mt-2 text-base text-[var(--text-caption)]">
+            ABST is organized entirely by students at Acton-Boxborough Regional High School, all members of the ABRHS Science Olympiad Team.
           </p>
         </div>
+      </div>
 
-        {/* Founders Section */}
-        <section className="mb-12">
-          <h2 className="mb-8 text-center text-2xl font-bold text-slate-200">Founders</h2>
-          <div className="grid grid-cols-1 items-start gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {/* Founders */}
+      <div>
+        <div className="mx-auto max-w-5xl px-6 sm:px-8 py-6">
+          <div className="grid grid-cols-1 items-start gap-6 sm:grid-cols-2 lg:grid-cols-2">
             {founders.map((member) => {
               const uniqueCardId = `founder-${member.id}`;
               return (
@@ -100,17 +102,19 @@ export default function AboutUs() {
               );
             })}
           </div>
-        </section>
+        </div>
+      </div>
         
-        {/* Volunteers Section */}
-        <section>
-          <h2 className="mb-8 text-center text-2xl font-bold text-slate-200">Volunteers</h2>
-          <div className="grid grid-cols-1 items-start gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+      {/* Volunteers */}
+      <div>
+        <div className="mx-auto max-w-5xl px-6 sm:px-8 py-8 border-t border-[var(--border-color)]">
+          <h2 className="mb-5 text-lg font-semibold text-[var(--text-heading)]">Volunteers</h2>
+          <div className="grid grid-cols-2 items-start gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
             {volunteers.map((member) => (
               <VolunteerCard key={member.id} member={member} />
             ))}
           </div>
-        </section>
+        </div>
       </div>
     </AnimatedPage>
   );
