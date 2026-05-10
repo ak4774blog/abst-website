@@ -1,12 +1,12 @@
 import AnimatedPage from '../components/AnimatedPage';
 
 const schedule = [
-  { time: '8:30 – 9:15',   label: 'Individual Block 1' },
-  { time: '9:30 – 10:15',  label: 'Individual Block 2' },
-  { time: '10:30 – 11:30', label: 'Team Round' },
-  { time: '11:45 – 12:45', label: 'Lunch' },
-  { time: '1:00 – 2:00',   label: 'Guts Round' },
-  { time: '2:30 – 3:15',   label: 'Awards Ceremony' },
+  { time: '9:00 – 9:45',   label: 'Individual Round 1' },
+  { time: '10:00 – 10:45', label: 'Individual Round 2' },
+  { time: '11:00 – 12:00', label: 'Team Round' },
+  { time: '12:00 – 1:00',  label: 'Lunch (+ Guest Speaker)' },
+  { time: '1:00 – 1:45',   label: 'Guts Round' },
+  { time: '2:00 – 3:00',   label: 'Awards Ceremony' },
 ];
 
 const individualEvents = [
@@ -33,6 +33,7 @@ export default function CompetitionInfo() {
           <p className="text-xs uppercase tracking-widest text-[var(--text-caption)] font-semibold pt-1">Date &amp; Location</p>
           <div>
             <p className="text-base text-[var(--text-body)]"><span className="font-medium text-[var(--text-heading)]">Date:</span> May 30, 2026</p>
+            <p className="text-base text-[var(--text-body)]"><span className="font-medium text-[var(--text-heading)]">Time:</span> 9:00 AM – 3:00 PM</p>
             <p className="text-base text-[var(--text-body)]"><span className="font-medium text-[var(--text-heading)]">Venue:</span> Acton Congregational Church</p>
             <p className="text-sm text-[var(--text-caption)]">12 Concord Road, Acton, MA</p>
             <p className="mt-3 text-sm text-[var(--text-caption)] italic">
@@ -51,7 +52,7 @@ export default function CompetitionInfo() {
               both covering questions from across all sciences.
             </p>
             <p className="text-base text-[var(--text-body)]">
-              {individualEvents.join(' · ')}
+              <strong>Individual Subject Rounds:</strong> {individualEvents.join(', ')}
             </p>
           </div>
         </section>
