@@ -26,7 +26,7 @@ export default function Register() {
           
           <ul className="mt-3 space-y-2 text-base text-[var(--text-body)] list-disc pl-5">
             <li>Use <strong>team registration</strong> if you are registering a complete team of <strong>4 to 6 students</strong>.</li>
-            <li>Use <strong>individual registration</strong> if you are registering as an individual or have a small group of <strong>fewer than 4 students</strong>.</li>
+            <li>Use <strong>individual & small team registration</strong> if you are registering as an individual or have a small group of <strong>fewer than 4 students</strong>.</li>
             <li><em>Every</em> participant must complete the <strong>release form</strong>, regardless of how they register.</li>
           </ul>
           
@@ -45,7 +45,7 @@ export default function Register() {
               rel="noreferrer"
               className="inline-block px-8 py-3 rounded-md bg-[var(--accent)] text-white font-semibold hover:bg-[var(--accent-hover)] transition-colors text-center shadow-sm"
             >
-              Individual Registration
+              Individual & Small Team Registration
             </a>
             <a 
               href="https://docs.google.com/forms/d/e/1FAIpQLSfQ371XKuhBy4M4C0jvcLaKoW8G9F6DMCSj600nGBilyI5xSQ/viewform"
@@ -88,7 +88,7 @@ export default function Register() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Individual Fees */}
               <div className="space-y-3">
-                <h3 className="text-lg font-semibold text-[var(--text-heading)]">Individual</h3>
+                <h3 className="text-lg font-semibold text-[var(--text-heading)]">Individual & Small Team</h3>
                 <ul className="space-y-1">
                   <li className="text-base text-[var(--text-body)]"><span className="font-semibold">$5/person</span> - Basic registration</li>
                   <li className="text-base text-[var(--text-body)]"><span className="font-semibold">+$2/person</span> - Full registration</li>

@@ -54,12 +54,18 @@ const bronzeSponsors = [
     href: 'https://hackclub.com/',
     logoSrc: '/hack-club-logo.png',
     description: 'Our 501(c)(3) fiscal sponsor, helping us operate as a non-profit.'
+  },
+  { 
+    name: 'Fun Learning Place', 
+    href: '#', // TODO: Add actual website link here
+    logoSrc: null, // No logo provided
+    description: 'Supporting STEM education and empowering students.' // TODO: Update with actual description if needed
   }
 ];
 
 // --- COMPONENTS ---
 
-// This component remains the same.
+// This component now conditionally renders the image container only if a logo is provided.
 function SponsorCard({ sponsor }) {
   return (
     <a 
@@ -68,13 +74,15 @@ function SponsorCard({ sponsor }) {
       rel="noopener noreferrer"
       className="block border border-[var(--border-color)] rounded p-5 h-full hover:border-[var(--text-muted)] transition-colors"
     >
-      <div className="relative h-16 mb-3 flex items-center justify-start">
-        <img
-          src={sponsor.logoSrc}
-          alt={`${sponsor.name} logo`}
-          className="max-h-full max-w-full object-contain"
-        />
-      </div>
+      {sponsor.logoSrc && (
+        <div className="relative h-16 mb-3 flex items-center justify-start">
+          <img
+            src={sponsor.logoSrc}
+            alt={`${sponsor.name} logo`}
+            className="max-h-full max-w-full object-contain"
+          />
+        </div>
+      )}
       <h3 className="text-base font-semibold text-[var(--text-heading)] mb-1">{sponsor.name}</h3>
       <p className="text-sm text-[var(--text-body)]">{sponsor.description}</p>
     </a>
