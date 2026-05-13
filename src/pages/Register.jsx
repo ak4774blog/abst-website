@@ -21,10 +21,16 @@ export default function Register() {
           {/* Registration Links Section */}
           <h2 className="text-xl font-semibold text-[var(--text-heading)]">Registration is Open</h2>
           <p className="text-base text-[var(--text-body)] mt-2">
-            Please fill out the appropriate registration form below. <strong>Note:</strong> Every participant must also complete the release form.
+            Please fill out the appropriate registration form below based on your group size.
           </p>
           
-          <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+          <ul className="mt-3 space-y-2 text-base text-[var(--text-body)] list-disc pl-5">
+            <li>Use <strong>team registration</strong> if you are registering a complete team of <strong>4 to 6 students</strong>.</li>
+            <li>Use <strong>individual registration</strong> if you are registering as an individual or have a small group of <strong>fewer than 4 students</strong>.</li>
+            <li><em>Every</em> participant must complete the <strong>release form</strong>, regardless of how they register.</li>
+          </ul>
+          
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
             <a 
               href="https://docs.google.com/forms/d/e/1FAIpQLSfj1MqIIpU5M713IXIl8iPdvQp3EmuB8KxrYiVPlYNJGaQ8Ng/viewform"
               target="_blank" 
