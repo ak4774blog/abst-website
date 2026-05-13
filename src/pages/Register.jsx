@@ -18,9 +18,42 @@ export default function Register() {
         </div>
 
         <div>
-          <h2 className="text-xl font-semibold text-[var(--text-heading)]">Registration Form Coming Soon</h2>
-          <p className="text-base text-[var(--text-body)] mt-2">Please check back closer to the event date. In the meantime, feel free to email us with any questions.</p>
-          <a href="mailto:absciencetournament@gmail.com" className="inline-block mt-4 text-base text-[var(--text-brand)] font-medium hover:underline">absciencetournament@gmail.com</a>
+          {/* Registration Links Section */}
+          <h2 className="text-xl font-semibold text-[var(--text-heading)]">Registration is Open</h2>
+          <p className="text-base text-[var(--text-body)] mt-2">
+            Please fill out the appropriate registration form below. <strong>Note:</strong> Every participant must also complete the release form.
+          </p>
+          
+          <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+            <a 
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfj1MqIIpU5M713IXIl8iPdvQp3EmuB8KxrYiVPlYNJGaQ8Ng/viewform"
+              target="_blank" 
+              rel="noreferrer"
+              className="inline-block px-8 py-3 rounded-md bg-[var(--accent)] text-white font-semibold hover:bg-[var(--accent-hover)] transition-colors text-center shadow-sm"
+            >
+              Team Registration
+            </a>
+            <a 
+              href="https://docs.google.com/forms/d/e/1FAIpQLSe8ChYLYZHThTvqs5FKxsXjmS1AMFH9XK2Kb_hX6FL5V9Nmkg/viewform"
+              target="_blank" 
+              rel="noreferrer"
+              className="inline-block px-8 py-3 rounded-md bg-[var(--accent)] text-white font-semibold hover:bg-[var(--accent-hover)] transition-colors text-center shadow-sm"
+            >
+              Individual Registration
+            </a>
+            <a 
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfQ371XKuhBy4M4C0jvcLaKoW8G9F6DMCSj600nGBilyI5xSQ/viewform"
+              target="_blank" 
+              rel="noreferrer"
+              className="inline-block px-8 py-3 rounded-md bg-[var(--accent)] text-white font-semibold hover:bg-[var(--accent-hover)] transition-colors text-center shadow-sm"
+            >
+              Release Form
+            </a>
+          </div>
+
+          <p className="text-sm text-[var(--text-body)] mt-6">
+            Have any questions? Feel free to email us at <a href="mailto:absciencetournament@gmail.com" className="text-[var(--text-brand)] font-medium hover:underline">absciencetournament@gmail.com</a>.
+          </p>
 
           {/* What to Expect Section */}
           <div className="mt-10 pt-8 border-t border-[var(--border-color)]">
