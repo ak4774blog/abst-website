@@ -72,6 +72,7 @@ export default function Register() {
               <div>
                 <p className="text-xs uppercase tracking-wide text-[var(--text-caption)] font-semibold mb-1">Grade Level</p>
                 <p className="text-sm text-[var(--text-body)]">Grade 8 and below</p>
+                <p className="text-sm text-[var(--text-caption)] mt-1 italic">Individual rounds are split into Grades 1-5 and Grades 6-8. Team rounds are unified.</p>
               </div>
               <div>
                 <p className="text-xs uppercase tracking-wide text-[var(--text-caption)] font-semibold mb-1">Events</p>
@@ -79,11 +80,26 @@ export default function Register() {
                 <p className="text-sm text-[var(--text-caption)] mt-1 italic">Each competitor only takes 2/6 individual rounds.</p>
               </div>
             </div>
+
+            {/* Parent & Coach Info */}
+            <div className="mt-6 p-4 border border-[var(--border-color)] rounded-md">
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-[var(--text-caption)] mb-2">Parent & Coach Observation</h3>
+              <p className="text-sm text-[var(--text-body)]">
+                Parents, guardians, and coaches do not need to accompany the team after registration. For those who wish to watch, the competition will largely take place in one large hall. Competitors will be seated in the main area, and parents/coaches are welcome to observe by standing or sitting along the walls on the opposite side of the room.
+              </p>
+            </div>
           </div>
 
           {/* Registration Fees Section */}
           <div className="mt-10 pt-8 border-t border-[var(--border-color)]">
-            <h2 className="text-xl font-semibold text-[var(--text-heading)] mb-6">Registration Fees</h2>
+            <h2 className="text-xl font-semibold text-[var(--text-heading)] mb-4">Registration Fees</h2>
+
+            {/* Payment Method Notice */}
+            <div className="mb-8 p-4 border-l-4 border-[var(--accent)] bg-gray-50 dark:bg-gray-800/50 rounded-r-md">
+              <p className="text-base text-[var(--text-body)]">
+                Payment will be collected <strong>in person at the door</strong> on the day of the event. Please note that we <strong>only accept cash</strong>.
+              </p>
+            </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Individual Fees */}
