@@ -4,14 +4,14 @@ import AnimatedPage from '../components/AnimatedPage';
 // --- DATA ---
 const allMembers = {
   // Founders
-  aarush: { id: 'aarush', name: 'Aarush Kulkarni', role: 'Head of Technology', shortBio: 'Loves math, chemistry, and physics', longBio: 'Aarush is a student at Acton-Boxborough Regional High School. In his free time, he likes to study math and chemistry. He also enjoys playing frisbee and spikeball with his friends.' },
-  tanish: { id: 'tanish', name: 'Tanish Parida', role: 'Head of Problem Writing', shortBio: 'Loves math, CS, astronomy, and donuts', longBio: 'Tanish is a student at Acton-Boxborough Regional High School. In his free time, he likes to do math, CS, and astronomy related things. He also likes eating donuts and playing sports with his friends.' },
-  nathan: { id: 'nathan', name: 'Nathan Tan', role: 'Head of Problem Writing', shortBio: 'Loves physics, math, CS, and frisbee', longBio: 'Nathan is a student at Acton-Boxborough Regional High School. In his free time, he likes to explore physics, math, and computer science. He also enjoys playing frisbee, video games, and practicing the piano.' },
-  ryan: { id: 'ryan', name: 'Ryan Xia', role: 'Team Coordinator', shortBio: 'Loves earth science and chemistry', longBio: 'Ryan is a student at Acton-Boxborough Regional High School. In his free time, he likes to explore topics in earth science and chemistry. He also enjoys reading and the pursuit of new knowledge.' },
-  anirudh: { id: 'anirudh', name: 'Anirudh Pulugurtha', role: 'Head of Communications', shortBio: 'Loves math, robotics, and geology', longBio: 'Anirudh is a student at Acton-Boxborough Regional High School. In his free time, he likes to work on robotics and explore geology. He also enjoys playing basketball and solving math problems.' },
-  minho: { id: 'minho', name: 'Minho Shin', role: 'Head of Communications', shortBio: 'Loves astronomy, guitar, and reading', longBio: 'Minho is a student at Acton-Boxborough Regional High School. In his free time, he enjoys exploring science through astronomy and playing the guitar. He also likes to read literature.' },
-  yiyi: { id: 'yiyi', name: 'Yiyi Song', role: 'Logistics Director', shortBio: 'Loves biology, baking, violin, and cats', longBio: 'Yiyi is a student at Acton-Boxborough Regional High School. In her free time, she likes to study biology and bake new things. She also really, really loves cats.' },
-  aaron: { id: 'aaron', name: 'Aaron Wang', role: 'Logistics Director', shortBio: 'Loves biology, writing, and engineering', longBio: 'Aaron is a student at Acton-Boxborough Regional High School. In his free time, he likes to learn about biology, earth science, and engineering. He also enjoys playing tennis and writing.' },
+  aarush: { id: 'aarush', name: 'Aarush Kulkarni', shortBio: 'Loves math, chemistry, and physics', longBio: 'Aarush is a student at Acton-Boxborough Regional High School. In his free time, he likes to study math and chemistry. He also enjoys playing frisbee and spikeball with his friends.' },
+  tanish: { id: 'tanish', name: 'Tanish Parida', shortBio: 'Loves math, CS, astronomy, and donuts', longBio: 'Tanish is a student at Acton-Boxborough Regional High School. In his free time, he likes to do math, CS, and astronomy related things. He also likes eating donuts and playing sports with his friends.' },
+  nathan: { id: 'nathan', name: 'Nathan Tan', shortBio: 'Loves physics, math, CS, and frisbee', longBio: 'Nathan is a student at Acton-Boxborough Regional High School. In his free time, he likes to explore physics, math, and computer science. He also enjoys playing frisbee, video games, and practicing the piano.' },
+  ryan: { id: 'ryan', name: 'Ryan Xia', shortBio: 'Loves earth science and chemistry', longBio: 'Ryan is a student at Acton-Boxborough Regional High School. In his free time, he likes to explore topics in earth science and chemistry. He also enjoys reading and the pursuit of new knowledge.' },
+  anirudh: { id: 'anirudh', name: 'Anirudh Pulugurtha', shortBio: 'Loves math, robotics, and geology', longBio: 'Anirudh is a student at Acton-Boxborough Regional High School. In his free time, he likes to work on robotics and explore geology. He also enjoys playing basketball and solving math problems.' },
+  minho: { id: 'minho', name: 'Minho Shin', shortBio: 'Loves astronomy, guitar, and reading', longBio: 'Minho is a student at Acton-Boxborough Regional High School. In his free time, he enjoys exploring science through astronomy and playing the guitar. He also likes to read literature.' },
+  yiyi: { id: 'yiyi', name: 'Yiyi Song', shortBio: 'Loves biology, baking, violin, and cats', longBio: 'Yiyi is a student at Acton-Boxborough Regional High School. In her free time, she likes to study biology and bake new things. She also really, really loves cats.' },
+  aaron: { id: 'aaron', name: 'Aaron Wang', shortBio: 'Loves biology, writing, and engineering', longBio: 'Aaron is a student at Acton-Boxborough Regional High School. In his free time, he likes to learn about biology, earth science, and engineering. He also enjoys playing tennis and writing.' },
 
   // Volunteers
   helen: { id: 'helen', name: 'Helen Xia', role: 'Head of Branding & Design' },
@@ -32,14 +32,18 @@ const allMembers = {
 };
 
 const founders = [
-  allMembers.aarush, allMembers.tanish, allMembers.nathan, allMembers.ryan,
-  allMembers.anirudh, allMembers.minho, allMembers.yiyi, allMembers.aaron
+  allMembers.ryan, allMembers.yiyi, allMembers.nathan, allMembers.minho,
+  allMembers.aarush, allMembers.aaron, allMembers.tanish, allMembers.anirudh
 ];
 
 const volunteers = [
   allMembers.helen, allMembers.ethan, allMembers.lucas, allMembers.warren,
   allMembers.sarthak, allMembers.kevin, allMembers.richard, allMembers.jonathan,
+<<<<<<< HEAD
   allMembers.avanithar, allMembers.benjamin, allMembers.andrew, allMembers.cindy, 
+=======
+  allMembers.avanithar, allMembers.benjamin, allMembers.andrew, allMembers.cindy,
+>>>>>>> b959762 (pushed smth)
   allMembers.eric, allMembers.ryanz, allMembers.tommy
 ];
 
@@ -51,8 +55,7 @@ function ExpandableCard({ member, isExpanded, onToggle }) {
       onClick={onToggle}
       className="cursor-pointer pb-4 border-b border-[var(--border-color)] hover:opacity-80 transition-opacity"
     >
-      <h3 className="text-base font-semibold text-[var(--text-heading)]">{member.name}</h3>
-      <p className="text-xs font-medium text-[var(--text-brand)] mb-1">{member.role}</p>
+      <h3 className="text-base font-semibold text-[var(--text-heading)] mb-1">{member.name}</h3>
       <p className="text-sm text-[var(--text-body)] leading-relaxed">
         {isExpanded ? member.longBio : member.shortBio}
       </p>
@@ -111,7 +114,11 @@ export default function AboutUs() {
           </div>
         </div>
       </div>
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> b959762 (pushed smth)
       {/* Volunteers & PR Team */}
       <div>
         <div className="mx-auto max-w-5xl px-6 sm:px-8 py-8 border-t border-[var(--border-color)]">
