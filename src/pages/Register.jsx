@@ -1,140 +1,117 @@
 import { Link } from 'react-router-dom';
-import AnimatedPage from '../components/AnimatedPage';
+
+const forms = [
+  {
+    name: 'Team registration',
+    who: 'For a complete team of 4 to 6 students.',
+    button: 'Register a team',
+    href: 'https://docs.google.com/forms/d/e/1FAIpQLSfj1MqIIpU5M713IXIl8iPdvQp3EmuB8KxrYiVPlYNJGaQ8Ng/viewform',
+  },
+  {
+    name: 'Individual & small team registration',
+    who: 'For individuals, or groups of fewer than 4 students.',
+    button: 'Register individually',
+    href: 'https://docs.google.com/forms/d/e/1FAIpQLSe8ChYLYZHThTvqs5FKxsXjmS1AMFH9XK2Kb_hX6FL5V9Nmkg/viewform',
+  },
+  {
+    name: 'Release form',
+    who: 'Every participant needs to fill this out, no matter how they registered.',
+    button: 'Release form',
+    href: 'https://docs.google.com/forms/d/e/1FAIpQLSfQ371XKuhBy4M4C0jvcLaKoW8G9F6DMCSj600nGBilyI5xSQ/viewform',
+  },
+];
 
 export default function Register() {
   return (
-    <AnimatedPage>
+    <>
       <title>Register | ABST</title>
-      <meta name="description" content="Register your team for the Acton-Boxborough Science Tournament. Sign up here to compete in our middle school science competition." />
+      <meta name="description" content="Register for the Acton-Boxborough Science Tournament, a science competition for students in grade 8 and below." />
 
-      {/* Page header band */}
-      <div className="max-w-5xl mx-auto px-6 sm:px-8 py-10 space-y-10">
-
-        <div>
-          <h1 className="font-serif heading-bold text-4xl font-bold text-[var(--text-heading)]">Register for ABST!</h1>
-          <p className="mt-2 text-base text-[var(--text-caption)]">
-            You can find all the information about the competition on the Competition Information tab.
+      <div className="wrap content py-8">
+        <div className="max-w-[780px]">
+          <h1>Registration</h1>
+          <p className="notice">
+            <strong>Registration is open.</strong> Fill out the form that matches your group below.
+            Every participant also needs a release form.
           </p>
-        </div>
 
-        <div>
-          {/* Registration Links Section */}
-          <h2 className="text-xl font-semibold text-[var(--text-heading)]">Registration is Open</h2>
-          <p className="text-base text-[var(--text-body)] mt-2">
-            Please fill out the appropriate registration form below based on your group size.
+          <h2>Forms</h2>
+          <div className="border border-[var(--rule)] divide-y divide-[var(--rule)] mb-4">
+            {forms.map((f) => (
+              <div key={f.name} className="flex flex-col gap-3 p-4 sm:flex-row sm:items-center">
+                <div className="flex-1">
+                  <h3 className="!m-0">{f.name}</h3>
+                  <p className="!m-0">{f.who}</p>
+                </div>
+                <a href={f.href} target="_blank" rel="noopener noreferrer" className="btn shrink-0 self-start sm:self-auto">
+                  {f.button}
+                </a>
+              </div>
+            ))}
+          </div>
+          <p className="note">The forms open in Google Forms.</p>
+
+          <h2>Fees</h2>
+          <p>
+            We collect payment <strong>in person at the door</strong> on the day of the event,
+            and we <strong>only accept cash</strong>.
           </p>
-          
-          <ul className="mt-3 space-y-2 text-base text-[var(--text-body)] list-disc pl-5">
-            <li>Use <strong>team registration</strong> if you are registering a complete team of <strong>4 to 6 students</strong>.</li>
-            <li>Use <strong>individual & small team registration</strong> if you are registering as an individual or have a small group of <strong>fewer than 4 students</strong>.</li>
-            <li><em>Every</em> participant must complete the <strong>release form</strong>, regardless of how they register.</li>
+          <div className="table-wrap">
+            <table className="data">
+              <thead>
+                <tr><th>Registration</th><th>Price</th><th>Includes</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Team (4 to 6 students)</td>
+                  <td className="nowrap">$5 per person</td>
+                  <td>Competition, lunch, raffle entry</td>
+                </tr>
+                <tr>
+                  <td>Individual &amp; small team, basic</td>
+                  <td className="nowrap">$5 per person</td>
+                  <td>Competition only</td>
+                </tr>
+                <tr>
+                  <td>Individual &amp; small team, full</td>
+                  <td className="nowrap">$7 per person</td>
+                  <td>Competition, lunch, raffle entry</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            Full registration is $2 more than basic. It covers lunch (at least 2 slices of pizza, plus snacks
+            like chips and cookies, and drinks) and gets you into a raffle for more prizes. The basic option
+            is for anyone who won't be eating the food we provide.
+          </p>
+          <p>
+            Teams of 4, 5, or 6 get the full package at the basic price as a group discount. All teams that
+            register are expected to compete in both the Team and Guts rounds.
+          </p>
+
+          <h2>Who can compete</h2>
+          <ul>
+            <li>Students in grade 8 and below.</li>
+            <li>Individual rounds are split into grades 1–5 and grades 6–8. Team rounds are not split.</li>
+            <li>Teams can have up to 6 students.</li>
+            <li>There are 6 individual rounds and 2 team rounds. Each competitor takes 2 of the 6 individual rounds.</li>
           </ul>
-          
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
-            <a 
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfj1MqIIpU5M713IXIl8iPdvQp3EmuB8KxrYiVPlYNJGaQ8Ng/viewform"
-              target="_blank" 
-              rel="noreferrer"
-              className="inline-block px-8 py-3 rounded-md bg-[var(--accent)] text-white font-semibold hover:bg-[var(--accent-hover)] transition-colors text-center shadow-sm"
-            >
-              Team Registration
-            </a>
-            <a 
-              href="https://docs.google.com/forms/d/e/1FAIpQLSe8ChYLYZHThTvqs5FKxsXjmS1AMFH9XK2Kb_hX6FL5V9Nmkg/viewform"
-              target="_blank" 
-              rel="noreferrer"
-              className="inline-block px-8 py-3 rounded-md bg-[var(--accent)] text-white font-semibold hover:bg-[var(--accent-hover)] transition-colors text-center shadow-sm"
-            >
-              Individual & Small Team Registration
-            </a>
-            <a 
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfQ371XKuhBy4M4C0jvcLaKoW8G9F6DMCSj600nGBilyI5xSQ/viewform"
-              target="_blank" 
-              rel="noreferrer"
-              className="inline-block px-8 py-3 rounded-md bg-[var(--accent)] text-white font-semibold hover:bg-[var(--accent-hover)] transition-colors text-center shadow-sm"
-            >
-              Release Form
-            </a>
-          </div>
 
-          <p className="text-sm text-[var(--text-body)] mt-6">
-            Have any questions? Feel free to email us at <a href="mailto:absciencetournament@gmail.com" className="text-[var(--text-brand)] font-medium hover:underline">absciencetournament@gmail.com</a>.
+          <h2>Parents and coaches</h2>
+          <p>
+            Parents, guardians, and coaches don't need to stay with the team after registration. If you'd
+            like to watch, most of the competition happens in one large hall. Competitors sit in the main
+            area, and parents and coaches are welcome to stand or sit along the walls on the opposite side
+            of the room.
           </p>
 
-          {/* What to Expect Section */}
-          <div className="mt-10 pt-8 border-t border-[var(--border-color)]">
-            <h2 className="text-xl font-semibold text-[var(--text-heading)] mb-4">What to Expect</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              <div>
-                <p className="text-xs uppercase tracking-widest text-[var(--text-caption)] font-semibold mb-1">Team Size</p>
-                <p className="text-base text-[var(--text-body)]">Up to 6 students per team</p>
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-wide text-[var(--text-caption)] font-semibold mb-1">Grade Level</p>
-                <p className="text-sm text-[var(--text-body)]">Grade 8 and below</p>
-                <p className="text-sm text-[var(--text-caption)] mt-1 italic">Individual rounds are split into Grades 1-5 and Grades 6-8. Team rounds are unified.</p>
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-wide text-[var(--text-caption)] font-semibold mb-1">Events</p>
-                <p className="text-sm text-[var(--text-body)]">6 individual + 2 team rounds</p>
-                <p className="text-sm text-[var(--text-caption)] mt-1 italic">Each competitor only takes 2/6 individual rounds.</p>
-              </div>
-            </div>
-
-            {/* Parent & Coach Info */}
-            <div className="mt-6 p-4 border border-[var(--border-color)] rounded-md">
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-[var(--text-caption)] mb-2">Parent & Coach Observation</h3>
-              <p className="text-sm text-[var(--text-body)]">
-                Parents, guardians, and coaches do not need to accompany the team after registration. For those who wish to watch, the competition will largely take place in one large hall. Competitors will be seated in the main area, and parents/coaches are welcome to observe by standing or sitting along the walls on the opposite side of the room.
-              </p>
-            </div>
-          </div>
-
-          {/* Registration Fees Section */}
-          <div className="mt-10 pt-8 border-t border-[var(--border-color)]">
-            <h2 className="text-xl font-semibold text-[var(--text-heading)] mb-4">Registration Fees</h2>
-
-            {/* Payment Method Notice */}
-            <div className="mb-8 p-4 border-l-4 border-[var(--accent)] bg-gray-50 dark:bg-gray-800/50 rounded-r-md">
-              <p className="text-base text-[var(--text-body)]">
-                Payment will be collected <strong>in person at the door</strong> on the day of the event. Please note that we <strong>only accept cash</strong>.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Individual Fees */}
-              <div className="space-y-3">
-                <h3 className="text-lg font-semibold text-[var(--text-heading)]">Individual & Small Team</h3>
-                <ul className="space-y-1">
-                  <li className="text-base text-[var(--text-body)]"><span className="font-semibold">$5/person</span> - Basic registration</li>
-                  <li className="text-base text-[var(--text-body)]"><span className="font-semibold">+$2/person</span> - Full registration</li>
-                </ul>
-                <p className="text-sm text-[var(--text-caption)] leading-relaxed">
-                  The full registration package covers food during the lunch block of the event, which includes (at least) 2 slices of pizza, snacks (chips, cookies, etc.), and beverages, as well as entry into a raffle for more prizes. The basic registration fee is available for those who will not be having the provided food.
-                </p>
-              </div>
-
-              {/* Team Fees */}
-              <div className="space-y-3">
-                <h3 className="text-lg font-semibold text-[var(--text-heading)]">Team</h3>
-                <ul className="space-y-1">
-                  <li className="text-base text-[var(--text-body)]"><span className="font-semibold">$5/person</span> - Full registration</li>
-                </ul>
-                <p className="text-sm text-[var(--text-caption)] leading-relaxed">
-                  Those registering as part of a 4, 5, or 6 member team are exempt from the full registration cost as a form of group discount. All teams who register are expected to compete in both the team and guts rounds.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-10 pt-8 border-t border-[var(--border-color)]">
-            <p className="text-base text-[var(--text-caption)]">
-              For full details, see our <Link to="/info" className="text-[var(--text-brand)] font-medium hover:underline">Competition Info</Link> page.
-            </p>
-          </div>
-
+          <p className="mt-10 pt-4 border-t border-[var(--rule)]">
+            The full schedule is on the <Link to="/info">Competition Info</Link> page. Other questions? Email
+            us at <a href="mailto:absciencetournament@gmail.com">absciencetournament@gmail.com</a>.
+          </p>
         </div>
       </div>
-    </AnimatedPage>
+    </>
   );
 }

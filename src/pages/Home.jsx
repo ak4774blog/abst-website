@@ -1,51 +1,98 @@
 import { Link } from 'react-router-dom';
-import AnimatedPage from '../components/AnimatedPage';
+import { sponsorTiers } from '../data/sponsors';
 
-const subjects = ['Math', 'Physics', 'Chemistry', 'Biology', 'Earth Science', 'Technology'];
+const sponsorNames = sponsorTiers.flatMap((t) => t.sponsors.map((s) => s.shortName || s.name));
 
 export default function Home() {
   return (
-    <AnimatedPage>
+    <>
       <title>ABST - Acton-Boxborough Science Tournament</title>
-      <meta name="description" content="The official website for the Acton-Boxborough Science Tournament (ABST), a premier science competition for middle schoolers in Massachusetts, founded by ABRHS students." />
+      <meta name="description" content="The Acton-Boxborough Science Tournament (ABST) is a science competition for elementary and middle school students in Massachusetts, run by students at Acton-Boxborough Regional High School." />
 
-      <div className="flex flex-col items-center justify-center min-h-[calc(100vh-4rem)] px-6 sm:px-8 text-center">
-
-        <p className="text-sm uppercase tracking-[0.25em] text-[var(--text-caption)] mb-6 animate-[fadeIn_0.6s_ease]">
-          2026 Onsite Competition
+      <div className="wrap content py-8">
+        <p className="notice mb-8">
+          <strong>Registration for ABST 2026 is open.</strong>{' '}
+          Forms and fees are on the <Link to="/register">registration page</Link>.
         </p>
 
-        <div className="w-12 h-1 bg-[var(--accent)] rounded-full mb-8 animate-[fadeIn_0.7s_ease]" />
+        <div className="grid gap-10 md:grid-cols-[1fr_300px]">
+          <div>
+            <h1>ABST 2026</h1>
+            <p>
+              The Acton-Boxborough Science Tournament is a science competition for students in grade 8 and below.
+              The tests are written and the event is run by students on the Acton-Boxborough Regional High School
+              Science Olympiad team.
+            </p>
+            <p>
+              We started ABST to give elementary and middle schoolers around New England more chances to do
+              competitive science, and to have fun doing it.
+            </p>
 
-        <h1 className="font-serif heading-bold text-5xl sm:text-7xl font-bold text-[var(--text-heading)] tracking-tight leading-[1.1] animate-[fadeIn_0.8s_ease]">
-          Acton-Boxborough<br />Science Tournament
-        </h1>
+            <h2>How it works</h2>
+            <p>
+              Each student picks two of the six individual subject tests: Math, Computer Science, Physics,
+              Earth &amp; Space Science, Biology, and Chemistry. Grades 1–5 and grades 6–8 take separate
+              individual tests.
+            </p>
+            <p>
+              After that, teams work together on a Team Round and a fast-paced Guts Round, both with questions
+              from every subject. Awards go to top individuals in each subject, top overall individuals, and
+              top teams.
+            </p>
+            <p>
+              You can register as a team of 4 to 6 students, or on your own or in a smaller group.
+              See <Link to="/info">Competition Info</Link> for the full schedule.
+            </p>
 
-        <p className="mt-6 text-lg text-[var(--text-body)] animate-[fadeIn_1s_ease]">
-          June 6, 2026 @ Acton Congregational Church
-          <span className="block text-xs text-[var(--text-caption)] mt-1 italic">Not a religious event</span>
-        </p>
+            <h2>Sponsors</h2>
+            <p>
+              ABST is supported by {sponsorNames.slice(0, -1).join(', ')}, and {sponsorNames[sponsorNames.length - 1]}.
+              Thank you! <Link to="/sponsors">See all sponsors</Link>.
+            </p>
+          </div>
 
-        <p className="mt-8 text-xl text-[var(--text-body)] max-w-2xl leading-relaxed animate-[fadeIn_1.2s_ease]">
-          Dedicated to making STEM education more accessible for middle and elementary schoolers across New England. A fun, competitive environment designed by a committed team of ABRHS students.
-        </p>
+          {/* on phones the info box shows first; the other two boxes are desktop-only */}
+          <aside className="order-first md:order-none">
+            <div className="sidebox">
+              <div className="sidebox-title">Tournament info</div>
+              <dl className="sidebox-body">
+                <dt>Date</dt>
+                <dd>Saturday, June 6, 2026<br />9:00 AM – 3:00 PM</dd>
+                <dt>Location</dt>
+                <dd>
+                  Acton Congregational Church<br />12 Concord Road, Acton, MA
+                  <span className="block text-[0.9rem] text-[var(--muted)] mt-1">
+                    The venue is a church, but the event is not religious.
+                  </span>
+                </dd>
+                <dt>Who can compete</dt>
+                <dd>Students in grade 8 and below</dd>
+                <dt>Cost</dt>
+                <dd>From $5 per person, paid in cash at the door</dd>
+              </dl>
+              <div className="px-[0.9rem] pb-4">
+                <Link to="/register" className="btn">Register</Link>
+              </div>
+            </div>
 
-        <div className="mt-10 flex gap-4 animate-[fadeIn_1.4s_ease]">
-          <Link
-            to="/register"
-            className="bg-[var(--accent)] text-white font-semibold text-base px-8 py-3 rounded-md hover:bg-[var(--accent-hover)] transition-colors shadow-sm"
-          >
-            Register
-          </Link>
-          <Link
-            to="/info"
-            className="text-[var(--text-heading)] font-semibold text-base px-8 py-3 rounded-md border border-[var(--border-color)] hover:bg-[var(--surface-muted)] transition-colors"
-          >
-            More info
-          </Link>
+            <div className="sidebox hidden md:block">
+              <div className="sidebox-title">Questions?</div>
+              <div className="sidebox-body">
+                Email us at
+                <br />
+                <a href="mailto:absciencetournament@gmail.com">absciencetournament@gmail.com</a>
+              </div>
+            </div>
+
+            <div className="sidebox hidden md:block">
+              <div className="sidebox-title">ABRHS students</div>
+              <div className="sidebox-body">
+                We're always looking for more volunteers. <Link to="/join">Sign up to help</Link>.
+              </div>
+            </div>
+          </aside>
         </div>
       </div>
-    </AnimatedPage>
+    </>
   );
 }
-

@@ -1,7 +1,5 @@
-import { useState } from 'react';
-import AnimatedPage from '../components/AnimatedPage';
-
-// --- DATA ---
+// Board members are shown with their long bios. Volunteers are grouped by role,
+// in the order they appear in the list below.
 const allMembers = {
   // Founders
   aarush: { id: 'aarush', name: 'Aarush Kulkarni', shortBio: 'Loves math, chemistry, and physics', longBio: 'Aarush is a student at Acton-Boxborough Regional High School. In his free time, he likes to study math and chemistry. He also enjoys playing frisbee and spikeball with his friends.' },
@@ -39,97 +37,51 @@ const founders = [
 const volunteers = [
   allMembers.helen, allMembers.ethan, allMembers.lucas, allMembers.warren,
   allMembers.sarthak, allMembers.kevin, allMembers.richard, allMembers.jonathan,
-<<<<<<< HEAD
-  allMembers.avanithar, allMembers.benjamin, allMembers.andrew, allMembers.cindy, 
-=======
   allMembers.avanithar, allMembers.benjamin, allMembers.andrew, allMembers.cindy,
->>>>>>> b959762 (pushed smth)
   allMembers.eric, allMembers.ryanz, allMembers.tommy
 ];
 
-// --- COMPONENTS ---
-
-function ExpandableCard({ member, isExpanded, onToggle }) {
-  return (
-    <div
-      onClick={onToggle}
-      className="cursor-pointer pb-4 border-b border-[var(--border-color)] hover:opacity-80 transition-opacity"
-    >
-      <h3 className="text-base font-semibold text-[var(--text-heading)] mb-1">{member.name}</h3>
-      <p className="text-sm text-[var(--text-body)] leading-relaxed">
-        {isExpanded ? member.longBio : member.shortBio}
-      </p>
-      <p className="mt-2 text-xs text-[var(--text-muted)]">{isExpanded ? 'Click to collapse' : 'Click to read more'}</p>
-    </div>
-  );
-}
-
-function VolunteerCard({ member }) {
-  return (
-    <div>
-      <h3 className="text-sm font-semibold text-[var(--text-heading)]">{member.name}</h3>
-      <p className="text-xs text-[var(--text-caption)] mt-0.5">{member.role}</p>
-    </div>
-  );
+function groupByRole(members) {
+  const groups = [];
+  for (const m of members) {
+    let g = groups.find((x) => x.role === m.role);
+    if (!g) groups.push((g = { role: m.role, names: [] }));
+    g.names.push(m.name);
+  }
+  return groups;
 }
 
 export default function AboutUs() {
-  const [expandedCard, setExpandedCard] = useState(null);
-
-  const handleCardClick = (uniqueCardId) => {
-    setExpandedCard(expandedCard === uniqueCardId ? null : uniqueCardId);
-  };
-
   return (
-    <AnimatedPage>
+    <>
       <title>Our Team | ABST</title>
-      <meta name="description" content="Meet the founders and volunteers of the Acton-Boxborough Science Tournament. Our team is composed of passionate students from ABRHS." />
+      <meta name="description" content="The students who run the Acton-Boxborough Science Tournament. ABST is organized entirely by students at Acton-Boxborough Regional High School." />
 
-      {/* Page header band */}
-      <div>
-        <div className="max-w-5xl mx-auto px-6 sm:px-8 pt-10 pb-6">
-          <h1 className="font-serif heading-bold text-4xl font-bold text-[var(--text-heading)]">About Our Team</h1>
-          <p className="mt-2 text-base text-[var(--text-caption)]">
-            ABST is organized entirely by students at Acton-Boxborough Regional High School, all members of the ABRHS Science Olympiad Team.
-          </p>
+      <div className="wrap content py-8">
+        <h1>Our Team</h1>
+        <p className="max-w-[780px]">
+          ABST is organized entirely by students at Acton-Boxborough Regional High School. All of us are
+          on the ABRHS Science Olympiad team.
+        </p>
+
+        <h2>Board of Directors</h2>
+        <div className="grid gap-x-10 gap-y-5 md:grid-cols-2">
+          {founders.map((m) => (
+            <div key={m.id}>
+              <h3 className="!mt-0 !mb-1">{m.name}</h3>
+              <p className="!mb-0 text-[0.975rem]">{m.longBio}</p>
+            </div>
+          ))}
         </div>
-      </div>
 
-      {/* Founders / Board of Directors */}
-      <div>
-        <div className="mx-auto max-w-5xl px-6 sm:px-8 py-6">
-          <h2 className="mb-5 text-lg font-semibold text-[var(--text-heading)]">Board of Directors</h2>
-          <div className="grid grid-cols-1 items-start gap-6 sm:grid-cols-2 lg:grid-cols-2">
-            {founders.map((member) => {
-              const uniqueCardId = `founder-${member.id}`;
-              return (
-                <ExpandableCard
-                  key={uniqueCardId}
-                  member={member}
-                  isExpanded={expandedCard === uniqueCardId}
-                  onToggle={() => handleCardClick(uniqueCardId)}
-                />
-              );
-            })}
+        <h2>Volunteers &amp; PR Team</h2>
+        {groupByRole(volunteers).map((g) => (
+          <div key={g.role}>
+            <h3>{g.role}</h3>
+            <p className="max-w-[780px]">{g.names.join(', ')}</p>
           </div>
-        </div>
+        ))}
       </div>
-<<<<<<< HEAD
-        
-=======
-
->>>>>>> b959762 (pushed smth)
-      {/* Volunteers & PR Team */}
-      <div>
-        <div className="mx-auto max-w-5xl px-6 sm:px-8 py-8 border-t border-[var(--border-color)]">
-          <h2 className="mb-5 text-lg font-semibold text-[var(--text-heading)]">Volunteers & PR Team</h2>
-          <div className="grid grid-cols-2 items-start gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-            {volunteers.map((member) => (
-              <VolunteerCard key={member.id} member={member} />
-            ))}
-          </div>
-        </div>
-      </div>
-    </AnimatedPage>
+    </>
   );
 }
