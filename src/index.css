@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap");
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+  --font-sans: "Libre Franklin", "Helvetica Neue", Arial, sans-serif;
   --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
 }
 
@@ -40,8 +40,8 @@ html.dark {
 @layer base {
   body {
     font-family: var(--font-sans);
-    font-size: 1.0625rem;
-    line-height: 1.6;
+    font-size: 1rem;
+    line-height: 1.65;
     background: var(--bg);
     color: var(--text);
     -webkit-font-smoothing: antialiased;
@@ -76,7 +76,7 @@ html.dark {
     border-bottom: 1px solid var(--rule);
   }
   .content h3 {
-    font-size: 1.0625rem;
+    font-size: 1rem;
     font-weight: 700;
     color: var(--ink);
     margin: 1.4rem 0 0.3rem;
@@ -96,7 +96,7 @@ html.dark {
 
   /* tables */
   .table-wrap { overflow-x: auto; margin: 0 0 1.25rem; }
-  table.data { width: 100%; border-collapse: collapse; font-size: 1rem; }
+  table.data { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
   table.data th,
   table.data td {
     border: 1px solid var(--rule);
@@ -136,7 +136,7 @@ html.dark {
     font-weight: 600;
     padding: 0.45rem 0.9rem;
   }
-  .sidebox-body { padding: 0.8rem 0.9rem; font-size: 0.975rem; }
+  .sidebox-body { padding: 0.8rem 0.9rem; font-size: 0.95rem; }
   .sidebox dt { font-weight: 600; color: var(--ink); }
   .sidebox dd { margin: 0 0 0.6rem; }
 }
