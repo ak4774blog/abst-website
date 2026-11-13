@@ -1,28 +1,42 @@
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+
+function initialDark() {
+  if (typeof window === 'undefined') return false;
+  const stored = localStorage.getItem('theme');
+  if (stored) return stored === 'dark';
+  return window.matchMedia('(prefers-color-scheme: dark)').matches;
+}
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
+  const [isDark, setIsDark] = useState(initialDark);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', isDark);
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  }, [isDark]);
+
   return (
-    <footer className="bg-[var(--accent)] text-white/80 mt-16">
-      <div className="max-w-5xl mx-auto px-6 sm:px-8 py-10">
-        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-8">
-          <div>
-            <p className="font-bold text-white text-lg tracking-wide">Acton-Boxborough Science Tournament</p>
-            <p className="mt-1 text-sm text-white/50">Acton-Boxborough Regional High School</p>
-          </div>
-          <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
-            <Link to="/info" className="hover:text-white transition-colors">Details</Link>
-            <Link to="/register" className="hover:text-white transition-colors">Register</Link>
-            <Link to="/sponsors" className="hover:text-white transition-colors">Sponsors</Link>
-            <Link to="/about" className="hover:text-white transition-colors">About</Link>
-            <Link to="/join" className="hover:text-white transition-colors">Join Us</Link>
-          </div>
+    <footer className="content mt-16 border-t border-[var(--rule)] bg-[var(--bg-alt)] text-[0.95rem] text-[var(--muted)]">
+      <div className="wrap py-8 flex flex-col gap-4 md:flex-row md:justify-between">
+        <div>
+          <p className="!mb-1 font-semibold text-[var(--ink)]">Acton-Boxborough Science Tournament</p>
+          <p className="!mb-1">Run by students at Acton-Boxborough Regional High School.</p>
+          <p className="!mb-0">
+            Fiscally sponsored by <a href="https://hackclub.com/" target="_blank" rel="noopener noreferrer">Hack Club</a>, a 501(c)(3) nonprofit.
+          </p>
         </div>
-        <div className="mt-8 pt-6 border-t border-white/15 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-xs text-white/40">
-          <p>&copy; {currentYear} Acton-Boxborough Science Tournament. Student-organized.</p>
-          <a href="mailto:absciencetournament@gmail.com" className="hover:text-white/70 transition-colors">
-            absciencetournament@gmail.com
-          </a>
+        <div className="md:text-right">
+          <p className="!mb-1">
+            <a href="mailto:absciencetournament@gmail.com">absciencetournament@gmail.com</a>
+          </p>
+          <p className="!mb-1">&copy; {new Date().getFullYear()} ABST</p>
+          <button
+            type="button"
+            onClick={() => setIsDark(!isDark)}
+            className="underline underline-offset-2 hover:text-[var(--ink)]"
+          >
+            {isDark ? 'Light mode' : 'Dark mode'}
+          </button>
         </div>
       </div>
     </footer>
