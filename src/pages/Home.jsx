@@ -10,11 +10,6 @@ export default function Home() {
       <meta name="description" content="The Acton-Boxborough Science Tournament (ABST) is a science competition for elementary and middle school students in Massachusetts, run by students at Acton-Boxborough Regional High School." />
 
       <div className="wrap content py-8">
-        <p className="notice mb-8">
-          <strong>Registration for ABST 2026 is open.</strong>{' '}
-          Forms and fees are on the <Link to="/register">registration page</Link>.
-        </p>
-
         <div className="grid gap-10 md:grid-cols-[1fr_300px]">
           <div>
             <h1>ABST 2026</h1>
